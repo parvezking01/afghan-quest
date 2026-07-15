@@ -1,8 +1,8 @@
 @extends('layouts.admin')
 
-@section('title', 'ویرایش هتل')
+@section('title', 'ویرایش هوتل')
 @section('page_title', 'ویرایش: ' . $hotel->name)
-@section('page_subtitle', 'اطلاعات هتل را بروزرسانی کنید')
+@section('page_subtitle', 'اطلاعات هوتل را بروزرسانی کنید')
 
 @section('content')
 
@@ -14,7 +14,7 @@
 
             <div class="grid md:grid-cols-3 gap-6 mb-6">
                 <div>
-                    <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">مالک هتل *</label>
+                    <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">مالک هوتل *</label>
                     <select name="user_id" class="w-full px-4 py-3 border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500" required>
                         @foreach($owners as $owner)
                             <option value="{{ $owner->id }}" {{ $hotel->user_id == $owner->id ? 'selected' : '' }}>{{ $owner->name }}</option>
@@ -30,9 +30,9 @@
                     </select>
                 </div>
                 <div>
-                    <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">مقصد نزدیک</label>
+                    <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">مکان نزدیک</label>
                     <select name="destination_id" class="w-full px-4 py-3 border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        <option value="">-- انتخاب مقصد --</option>
+                        <option value="">-- انتخاب مکان--</option>
                         @foreach($destinations as $dest)
                             <option value="{{ $dest->id }}" {{ $hotel->destination_id == $dest->id ? 'selected' : '' }}>{{ $dest->name }}</option>
                         @endforeach
@@ -42,7 +42,7 @@
 
             <div class="grid md:grid-cols-2 gap-6">
                 <div>
-                    <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">نام هتل (دری) *</label>
+                    <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">نام هوتل (دری) *</label>
                     <input type="text" name="name" value="{{ old('name', $hotel->name) }}" class="w-full px-4 py-3 border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500" required>
                 </div>
                 <div>
@@ -114,7 +114,7 @@
 
         <form action="{{ route('admin.hotels.destroy', $hotel) }}" method="POST" class="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
             @csrf @method('DELETE')
-            <button type="button" onclick="confirmDelete(this.parentElement)" class="text-red-500 hover:text-red-700 font-bold text-sm"><i class="fas fa-trash ms-1"></i> حذف این هتل</button>
+            <button type="button" onclick="confirmDelete(this.parentElement)" class="text-red-500 hover:text-red-700 font-bold text-sm"><i class="fas fa-trash ms-1"></i> حذف این هوتل</button>
         </form>
     </div>
 </div>

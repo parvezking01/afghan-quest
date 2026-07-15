@@ -173,13 +173,13 @@
                 <a href="{{ route('admin.destinations.index') }}"
                     class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-xl mb-1 text-base {{ request()->routeIs('admin.destinations.*') ? 'active' : '' }}">
                     <i class="fas fa-landmark w-5 text-center"></i>
-                    <span>مقاصد</span>
+                    <span>مکان ها</span>
                 </a>
 
                 <a href="{{ route('admin.hotels.index') }}"
                     class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-xl mb-1 text-base {{ request()->routeIs('admin.hotels.*') ? 'active' : '' }}">
                     <i class="fas fa-hotel w-5 text-center"></i>
-                    <span>هتل‌ها</span>
+                    <span>هوتل‌ها</span>
                 </a>
 
                 <a href="{{ route('admin.packages.index') }}"

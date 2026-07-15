@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'پنل مالک هتل') | افغان کویست</title>
+    <title>@yield('title', 'پنل مالک هوتل') | افغان کویست</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -151,7 +151,7 @@
             <div class="p-6 border-b border-gray-700">
                 <a href="{{ url('/') }}" class="flex items-center gap-3 text-xl font-black">
                     <span class="text-2xl">🏨</span>
-                    <span style="color: #F4D03F;">پنل هتل</span>
+                    <span style="color: #F4D03F;">پنل هوتل</span>
                 </a>
                 <p class="text-gray-400 text-sm mt-1 mr-2">مدیریت اقامتگاه</p>
             </div>
@@ -170,7 +170,7 @@
                 <a href="{{ route('hotel_owner.hotels.index') }}"
                     class="sidebar-link flex items-center gap-3 px-4 py-3 mb-1 text-base {{ request()->routeIs('hotel_owner.hotels.*') ? 'active' : '' }}">
                     <i class="fas fa-hotel w-5 text-center"></i>
-                    <span>هتل‌های من</span>
+                    <span>هوتل‌های من</span>
                 </a>
 
                 <a href="{{ route('hotel_owner.bookings') }}"
@@ -197,7 +197,7 @@
                     </div>
                     <div class="flex-1">
                         <p class="text-sm font-bold text-white">{{ auth()->user()->name }}</p>
-                        <p class="text-xs text-gray-400">مالک هتل</p>
+                        <p class="text-xs text-gray-400">مالک هوتل</p>
                     </div>
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf

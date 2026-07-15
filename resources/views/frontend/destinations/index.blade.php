@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
-@section('title', app()->getLocale() === 'en' ? 'Tourist Destinations' : 'مقاصد گردشگری')
+@section('title', app()->getLocale() === 'en' ? 'Tourist Destinations' : 'مکان های  گردشگری')
 
 @section('content')
 
-<section class="relative py-20" style="background: linear-gradient(rgba(26, 26, 46, 0.85), rgba(22, 33, 62, 0.9)), url('https://images.unsplash.com/photo-1599070292747-ae92ea606fcf?w=1920') center/cover;">
+<section class="relative py-20" style="background: linear-gradient(rgba(26, 26, 46, 0.85), rgba(22, 33, 62, 0.9)), url('{{ asset('images/KABUL.jpg') }}') center/cover;">
     <div class="container mx-auto px-4 text-center relative z-10">
-        <h1 class="text-4xl lg:text-5xl font-black text-white mb-4">{{ app()->getLocale() === 'en' ? 'Tourist Destinations' : 'مقاصد گردشگری' }}</h1>
+        <h1 class="text-4xl lg:text-5xl font-black text-white mb-4">{{ app()->getLocale() === 'en' ? 'Tourist Destinations' : 'مکان های گردشگری' }}</h1>
         <p class="text-xl text-gray-300">{{ app()->getLocale() === 'en' ? 'The most amazing places in Afghanistan' : 'شگفت‌انگیزترین نقاط افغانستان' }}</p>
     </div>
 </section>

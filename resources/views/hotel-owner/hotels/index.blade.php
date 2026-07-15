@@ -1,15 +1,15 @@
 @extends('layouts.hotel-owner')
 
-@section('title', 'هتل‌های من')
-@section('page_title', 'هتل‌های من')
-@section('page_subtitle', 'مدیریت هتل‌های ثبت شده')
+@section('title', 'هوتل‌های من')
+@section('page_title', 'هوتل‌های من')
+@section('page_subtitle', 'مدیریت هوتل‌های ثبت شده')
 
 @section('content')
 
 <div class="flex items-center justify-between mb-6">
-    <p class="text-gray-500 dark:text-gray-400">کل: <span class="font-bold text-gray-700 dark:text-white">{{ $hotels->count() }}</span> هتل</p>
+    <p class="text-gray-500 dark:text-gray-400">کل: <span class="font-bold text-gray-700 dark:text-white">{{ $hotels->count() }}</span> هوتل</p>
     <a href="{{ route('hotel_owner.hotels.create') }}" class="bg-blue-500 text-white px-6 py-3 rounded-xl font-bold hover:bg-blue-600 transition-colors">
-        <i class="fas fa-plus ms-1"></i> افزودن هتل جدید
+        <i class="fas fa-plus ms-1"></i> افزودن هوتل جدید
     </a>
 </div>
 
@@ -49,10 +49,10 @@
     @empty
     <div class="col-span-3 text-center py-16 bg-white dark:bg-gray-800 rounded-2xl">
         <div class="text-6xl mb-4">🏨</div>
-        <h3 class="text-xl font-bold text-gray-600 dark:text-gray-300 mb-2">هنوز هتلی ثبت نکرده‌اید</h3>
-        <p class="text-gray-400 dark:text-gray-500 mb-6">اولین هتل خود را اضافه کنید</p>
+        <h3 class="text-xl font-bold text-gray-600 dark:text-gray-300 mb-2">هنوز هوتلی ثبت نکرده‌اید</h3>
+        <p class="text-gray-400 dark:text-gray-500 mb-6">اولین هوتل خود را اضافه کنید</p>
         <a href="{{ route('hotel_owner.hotels.create') }}" class="bg-blue-500 text-white px-8 py-3 rounded-xl font-bold hover:bg-blue-600 transition-colors inline-block">
-            <i class="fas fa-plus ms-1"></i> افزودن هتل جدید
+            <i class="fas fa-plus ms-1"></i> افزودن هوتل جدید
         </a>
     </div>
     @endforelse

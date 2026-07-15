@@ -58,14 +58,14 @@
                 <div class="bg-white dark:bg-gray-800 rounded-2xl p-12 shadow-sm text-center">
                     <div class="text-5xl mb-4">🚪</div>
                     <h3 class="text-xl font-black text-gray-600 dark:text-gray-300 mb-2">{{ app()->getLocale() === 'en' ? 'No Rooms Registered' : 'اتاقی ثبت نشده است' }}</h3>
-                    <p class="text-gray-400 dark:text-gray-500">{{ app()->getLocale() === 'en' ? 'Please contact the hotel for room availability.' : 'لطفاً برای اطلاع از اتاق‌های موجود با هتل تماس بگیرید.' }}</p>
+                    <p class="text-gray-400 dark:text-gray-500">{{ app()->getLocale() === 'en' ? 'Please contact the hotel for room availability.' : 'لطفاً برای اطلاع از اتاق‌های موجود با هوتل تماس بگیرید.' }}</p>
                 </div>
                 @endif
             </div>
 
             <div>
                 <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm sticky top-24">
-                    <h4 class="font-black text-gray-800 dark:text-white mb-4">{{ app()->getLocale() === 'en' ? 'ℹ️ Hotel Info' : 'ℹ️ اطلاعات هتل' }}</h4>
+                    <h4 class="font-black text-gray-800 dark:text-white mb-4">{{ app()->getLocale() === 'en' ? 'ℹ️ Hotel Info' : 'ℹ️ اطلاعات هوتل' }}</h4>
 
                     <div class="space-y-4 text-sm mb-6">
                         <div class="flex items-center gap-2">
@@ -97,11 +97,11 @@
                        class="block w-full text-center bg-green-500 text-white py-4 rounded-xl font-bold text-lg hover:bg-green-600 transition-all shadow-lg hover:shadow-xl mb-3">
                         <i class="fas fa-sign-in-alt ms-1"></i> {{ app()->getLocale() === 'en' ? 'Login to Book' : 'برای رزرو وارد شوید' }}
                     </a>
-                    <p class="text-center text-gray-400 dark:text-gray-500 text-xs">{{ app()->getLocale() === 'en' ? 'You need an account to book a hotel' : 'برای رزرو هتل نیاز به حساب کاربری دارید' }}</p>
+                    <p class="text-center text-gray-400 dark:text-gray-500 text-xs">{{ app()->getLocale() === 'en' ? 'You need an account to book a hotel' : 'برای رزرو هوتل نیاز به حساب کاربری دارید' }}</p>
                     @endauth
 
                     <a href="tel:{{ $hotel->phone }}" class="block text-center border-2 border-blue-500 text-blue-500 dark:text-blue-400 py-3 rounded-xl font-bold hover:bg-blue-500 hover:text-white transition-all">
-                        <i class="fas fa-phone ms-1"></i> {{ app()->getLocale() === 'en' ? 'Call Hotel' : 'تماس با هتل' }}
+                        <i class="fas fa-phone ms-1"></i> {{ app()->getLocale() === 'en' ? 'Call Hotel' : 'تماس با هوتل' }}
                     </a>
                 </div>
             </div>

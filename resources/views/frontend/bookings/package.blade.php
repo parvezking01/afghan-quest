@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
-@section('title', 'رزرو تور: ' . $package->name)
+@section('title', 'رزرو پکیج: ' . $package->name)
 
 @section('content')
 
 <section class="py-16 bg-gray-50">
     <div class="container mx-auto px-4 max-w-2xl">
         <div class="bg-white rounded-2xl shadow-sm p-8">
-            <h2 class="text-2xl font-black text-gray-800 mb-6">📋 فرم رزرو تور</h2>
+            <h2 class="text-2xl font-black text-gray-800 mb-6">📋 فرم رزرو پکیج</h2>
 
             <div class="bg-blue-50 rounded-xl p-4 mb-6">
                 <h5 class="font-bold text-blue-700">{{ $package->name }}</h5>

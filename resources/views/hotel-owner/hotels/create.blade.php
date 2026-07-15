@@ -1,8 +1,8 @@
 @extends('layouts.hotel-owner')
 
-@section('title', 'افزودن هتل جدید')
-@section('page_title', 'افزودن هتل جدید')
-@section('page_subtitle', 'اطلاعات هتل خود را وارد کنید')
+@section('title', 'افزودن هوتل جدید')
+@section('page_title', 'افزودن هوتل جدید')
+@section('page_subtitle', 'اطلاعات هوتل خود را وارد کنید')
 
 @section('content')
 
@@ -12,8 +12,8 @@
             @csrf
 
             <div class="mb-6">
-                <label class="block text-sm font-bold text-gray-700 mb-2">نام هتل *</label>
-                <input type="text" name="name" value="{{ old('name') }}" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="نام هتل خود را وارد کنید" required>
+                <label class="block text-sm font-bold text-gray-700 mb-2">نام هوتل *</label>
+                <input type="text" name="name" value="{{ old('name') }}" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="نام هوتل خود را وارد کنید" required>
             </div>
 
             <div class="grid md:grid-cols-2 gap-6 mb-6">
@@ -50,12 +50,12 @@
 
             <div class="mb-6">
                 <label class="block text-sm font-bold text-gray-700 mb-2">آدرس *</label>
-                <textarea name="address" rows="2" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="آدرس کامل هتل" required>{{ old('address') }}</textarea>
+                <textarea name="address" rows="2" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="آدرس کامل هوتل" required>{{ old('address') }}</textarea>
             </div>
 
             <div class="mb-6">
                 <label class="block text-sm font-bold text-gray-700 mb-2">توضیحات *</label>
-                <textarea name="description" rows="4" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="امکانات و خدمات هتل..." required>{{ old('description') }}</textarea>
+                <textarea name="description" rows="4" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="امکانات و خدمات هوتل..." required>{{ old('description') }}</textarea>
             </div>
 
             <div class="mb-6">
@@ -77,7 +77,7 @@
 
             <div class="flex gap-3">
                 <button type="submit" class="flex-1 bg-blue-500 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-600 transition-all">
-                    <i class="fas fa-save ms-1"></i> ذخیره هتل
+                    <i class="fas fa-save ms-1"></i> ذخیره هوتل
                 </button>
                 <a href="{{ route('hotel_owner.hotels.index') }}" class="bg-gray-100 text-gray-600 px-8 py-4 rounded-xl font-bold hover:bg-gray-200 transition-colors">انصراف</a>
             </div>

@@ -87,7 +87,7 @@
                     </td>
                     <td class="py-4 px-3">
                         <span class="px-3 py-1 rounded-lg text-xs font-bold {{ $booking->booking_type === 'package' ? 'bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400' : 'bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400' }}">
-                            {{ $booking->booking_type === 'package' ? '📦 تور' : '🏨 هتل' }}
+                            {{ $booking->booking_type === 'package' ? '📦 تور' : '🏨 هوتل' }}
                         </span>
                     </td>
                     <td class="py-4 px-3">

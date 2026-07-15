@@ -1,8 +1,8 @@
 @extends('layouts.hotel-owner')
 
 @section('title', 'داشبورد')
-@section('page_title', 'داشبورد هتل')
-@section('page_subtitle', 'خلاصه وضعیت هتل‌های شما')
+@section('page_title', 'داشبورد هوتل')
+@section('page_subtitle', 'خلاصه وضعیت هوتل‌های شما')
 
 @section('content')
 
@@ -14,7 +14,7 @@
             </div>
         </div>
         <h3 class="text-3xl font-black text-gray-700 dark:text-white">{{ $totalHotels }}</h3>
-        <p class="text-gray-400 dark:text-gray-500 text-sm mt-1">هتل‌های شما</p>
+        <p class="text-gray-400 dark:text-gray-500 text-sm mt-1">هوتل‌های شما</p>
     </div>
 
     <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 border border-gray-100 dark:border-gray-700 shadow-sm" data-aos="fade-up" data-aos-delay="200">
@@ -51,8 +51,8 @@
 <div class="grid md:grid-cols-2 gap-6 mb-8">
     <a href="{{ route('hotel_owner.hotels.index') }}" class="bg-white dark:bg-gray-800 rounded-2xl p-6 border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-lg transition-all text-center group">
         <i class="fas fa-hotel text-4xl text-blue-500 dark:text-blue-400 mb-3 group-hover:scale-110 transition-transform"></i>
-        <h4 class="font-bold text-gray-700 dark:text-gray-200">مدیریت هتل‌ها</h4>
-        <p class="text-gray-400 dark:text-gray-500 text-sm mt-1">افزودن و ویرایش هتل‌ها</p>
+        <h4 class="font-bold text-gray-700 dark:text-gray-200">مدیریت هوتل‌ها</h4>
+        <p class="text-gray-400 dark:text-gray-500 text-sm mt-1">افزودن و ویرایش هوتل‌ها</p>
     </a>
 
     <a href="{{ route('hotel_owner.bookings') }}" class="bg-white dark:bg-gray-800 rounded-2xl p-6 border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-lg transition-all text-center group">
@@ -71,7 +71,7 @@
             <thead>
                 <tr class="bg-gray-50 dark:bg-gray-700/50">
                     <th class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase">مهمان</th>
-                    <th class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase">هتل</th>
+                    <th class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase">هوتل</th>
                     <th class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase">واتساپ</th>
                     <th class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase">مبلغ</th>
                     <th class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase">وضعیت</th>

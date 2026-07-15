@@ -26,8 +26,8 @@
                     <th class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase">#</th>
                     <th class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase">نام ولایت</th>
                     <th class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase">نام انگلیسی</th>
-                    <th class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase">مقاصد</th>
-                    <th class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase">هتل‌ها</th>
+                    <th class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase">مکان‌ها</th>
+                    <th class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase">هوتل‌ها</th>
                     <th class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase">امنیت</th>
                     <th class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase">پرطرفدار</th>
                     <th class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase">وضعیت</th>
@@ -52,12 +52,12 @@
                     <td class="py-4 px-6 text-sm text-gray-500 dark:text-gray-400">{{ $province->name_en ?? '-' }}</td>
                     <td class="py-4 px-6">
                         <span class="bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 px-3 py-1 rounded-lg text-xs font-bold">
-                            {{ $province->destinations_count }} مقصد
+                            {{ $province->destinations_count }} مکان
                         </span>
                     </td>
                     <td class="py-4 px-6">
                         <span class="bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 px-3 py-1 rounded-lg text-xs font-bold">
-                            {{ $province->hotels_count }} هتل
+                            {{ $province->hotels_count }} هوتل
                         </span>
                     </td>
                     <td class="py-4 px-6">

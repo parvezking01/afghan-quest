@@ -8,13 +8,13 @@
     <div class="container mx-auto px-4 text-center relative z-10">
         <span class="bg-gold-500 text-primary-900 px-4 py-2 rounded-full text-sm font-bold inline-block mb-4">
             @if($package->type === 'provincial')
-                {{ app()->getLocale() === 'en' ? '🏛️ Provincial Tour' : '🏛️ تور ولایتی' }}
+                {{ app()->getLocale() === 'en' ? '🏛️ Provincial Tour' : '🏛️ پکیج ولایتی' }}
             @elseif($package->type === 'regional')
-                {{ app()->getLocale() === 'en' ? '🗺️ Regional Tour' : '🗺️ تور منطقه‌ای' }}
+                {{ app()->getLocale() === 'en' ? '🗺️ Regional Tour' : '🗺️ پکیج منطقه‌ای' }}
             @elseif($package->type === 'thematic')
-                {{ app()->getLocale() === 'en' ? '🎯 Thematic Tour' : '🎯 تور موضوعی' }}
+                {{ app()->getLocale() === 'en' ? '🎯 Thematic Tour' : '🎯 پکیج موضوعی' }}
             @else
-                {{ app()->getLocale() === 'en' ? '✏️ Custom Tour' : '✏️ تور سفارشی' }}
+                {{ app()->getLocale() === 'en' ? '✏️ Custom Tour' : '✏️ پکیج سفارشی' }}
             @endif
         </span>
         <h1 class="text-4xl lg:text-6xl font-black text-white mb-4">{{ locale_field($package, 'name') }}</h1>
@@ -33,7 +33,7 @@
         <div class="grid lg:grid-cols-3 gap-8">
             <div class="lg:col-span-2">
                 <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm mb-6">
-                    <h3 class="text-xl font-black text-gray-800 dark:text-white mb-4">{{ app()->getLocale() === 'en' ? '📝 Tour Description' : '📝 توضیحات تور' }}</h3>
+                    <h3 class="text-xl font-black text-gray-800 dark:text-white mb-4">{{ app()->getLocale() === 'en' ? '📝 Tour Description' : '📝 توضیحات پکیج' }}</h3>
                     <p class="text-gray-600 dark:text-gray-300 leading-relaxed">{{ locale_field($package, 'description') }}</p>
                 </div>
 
@@ -50,7 +50,7 @@
 
                 @if($package->destinations->count() > 0)
                 <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm mb-6">
-                    <h3 class="text-xl font-black text-gray-800 dark:text-white mb-4">{{ app()->getLocale() === 'en' ? '📍 Tour Destinations' : '📍 مقاصد تور' }}</h3>
+                    <h3 class="text-xl font-black text-gray-800 dark:text-white mb-4">{{ app()->getLocale() === 'en' ? '📍 Tour Destinations' : '📍 مکان های پکیج' }}</h3>
                     <div class="grid md:grid-cols-2 gap-4">
                         @foreach($package->destinations as $dest)
                         <div class="flex items-center gap-3 p-4 bg-gray-50 dark:bg-gray-700 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors">
@@ -107,7 +107,7 @@
             <div>
                 <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm sticky top-24">
                     <div class="text-center mb-6 bg-gray-50 dark:bg-gray-700 rounded-xl p-4">
-                        <p class="text-gray-400 dark:text-gray-500 text-sm mb-1">{{ app()->getLocale() === 'en' ? 'Tour Price' : 'قیمت تور' }}</p>
+                        <p class="text-gray-400 dark:text-gray-500 text-sm mb-1">{{ app()->getLocale() === 'en' ? 'Tour Price' : 'قیمت پکیج' }}</p>
                         @if($package->discount_price)
                         <p class="text-4xl font-black text-gray-800 dark:text-white">{{ number_format($package->discount_price) }} اف</p>
                         <p class="text-lg text-red-500 line-through">{{ number_format($package->price) }} اف</p>
@@ -118,7 +118,7 @@
                     </div>
 
                     <div class="space-y-3 mb-6 text-sm">
-                        <div class="flex justify-between py-2 border-b border-gray-200 dark:border-gray-600"><span class="text-gray-500 dark:text-gray-400">{{ app()->getLocale() === 'en' ? '⏱️ Duration' : '⏱️ مدت تور' }}</span><span class="font-bold text-gray-700 dark:text-gray-200">{{ $package->duration_days }} {{ app()->getLocale() === 'en' ? 'Days' : 'روز' }} / {{ $package->duration_nights }} {{ app()->getLocale() === 'en' ? 'Nights' : 'شب' }}</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-200 dark:border-gray-600"><span class="text-gray-500 dark:text-gray-400">{{ app()->getLocale() === 'en' ? '⏱️ Duration' : '⏱️ مدت پکیج' }}</span><span class="font-bold text-gray-700 dark:text-gray-200">{{ $package->duration_days }} {{ app()->getLocale() === 'en' ? 'Days' : 'روز' }} / {{ $package->duration_nights }} {{ app()->getLocale() === 'en' ? 'Nights' : 'شب' }}</span></div>
                         <div class="flex justify-between py-2 border-b border-gray-200 dark:border-gray-600"><span class="text-gray-500 dark:text-gray-400">{{ app()->getLocale() === 'en' ? '👥 Capacity' : '👥 ظرفیت' }}</span><span class="font-bold text-gray-700 dark:text-gray-200">{{ $package->max_travelers }} {{ app()->getLocale() === 'en' ? 'People' : 'نفر' }}</span></div>
                         <div class="flex justify-between py-2 border-b border-gray-200 dark:border-gray-600"><span class="text-gray-500 dark:text-gray-400">{{ app()->getLocale() === 'en' ? '👨‍🏫 Guide' : '👨‍🏫 راهنما' }}</span><span class="font-bold {{ $package->includes_guide ? 'text-green-500' : 'text-red-500' }}">{{ $package->includes_guide ? (app()->getLocale() === 'en' ? 'Yes ✅' : 'دارد ✅') : (app()->getLocale() === 'en' ? 'No ❌' : 'ندارد ❌') }}</span></div>
                     </div>
@@ -126,7 +126,7 @@
                     @auth
                     <a href="{{ route('booking.package.create', $package->slug) }}"
                        class="block w-full text-center bg-green-500 text-white py-4 rounded-xl font-bold text-lg hover:bg-green-600 transition-all shadow-lg hover:shadow-xl mb-3">
-                        <i class="fas fa-calendar-check ms-1"></i> {{ app()->getLocale() === 'en' ? 'Book This Tour' : 'رزرو این تور' }}
+                        <i class="fas fa-calendar-check ms-1"></i> {{ app()->getLocale() === 'en' ? 'Book This Tour' : 'رزرو این پکیج' }}
                     </a>
                     @else
                     <a href="{{ route('login') }}"

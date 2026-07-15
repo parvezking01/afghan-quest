@@ -123,7 +123,7 @@
                     </a>
                     <a href="{{ route('provinces.index') }}"
                         class="text-sm font-bold pb-1 border-b-2 transition-colors {{ request()->routeIs('provinces.*') ? 'text-blue-600 dark:text-blue-400 border-blue-600 dark:border-blue-400' : 'text-gray-500 dark:text-gray-400 border-transparent hover:text-gray-700 dark:hover:text-gray-300' }}">
-                        {{ app()->getLocale() === 'en' ? 'Explore' : 'کشف مقاصد' }}
+                        {{ app()->getLocale() === 'en' ? 'Explore' : 'کشف مکان ها' }}
                     </a>
                 </div>
 

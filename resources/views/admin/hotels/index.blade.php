@@ -1,16 +1,16 @@
 @extends('layouts.admin')
 
-@section('title', 'مدیریت هتل‌ها')
-@section('page_title', 'مدیریت هتل‌ها')
-@section('page_subtitle', 'لیست تمام هتل‌ها')
+@section('title', 'مدیریت هوتل‌ها')
+@section('page_title', 'مدیریت هوتل‌ها')
+@section('page_subtitle', 'لیست تمام هوتل‌ها')
 
 @section('content')
 
 <div class="flex items-center justify-between mb-6">
-    <p class="text-gray-500 dark:text-gray-400">کل: <span class="font-bold text-gray-700 dark:text-white">{{ $hotels->total() }}</span> هتل</p>
+    <p class="text-gray-500 dark:text-gray-400">کل: <span class="font-bold text-gray-700 dark:text-white">{{ $hotels->total() }}</span> هوتل</p>
     <a href="{{ route('admin.hotels.create') }}"
        class="bg-blue-500 text-white px-6 py-3 rounded-xl font-bold hover:bg-blue-600 transition-colors">
-        <i class="fas fa-plus ms-1"></i> افزودن هتل جدید
+        <i class="fas fa-plus ms-1"></i> افزودن هوتل جدید
     </a>
 </div>
 
@@ -20,7 +20,7 @@
             <thead>
                 <tr class="bg-gray-50 dark:bg-gray-700/50">
                     <th class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase">تصویر</th>
-                    <th class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase">نام هتل</th>
+                    <th class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase">نام هوتل</th>
                     <th class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase">ولایت</th>
                     <th class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase">مالک</th>
                     <th class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase">شماره تماس</th>
@@ -86,9 +86,9 @@
                 <tr>
                     <td colspan="8" class="text-center py-12">
                         <div class="text-5xl mb-4">🏨</div>
-                        <h3 class="text-lg font-bold text-gray-600 dark:text-gray-300 mb-2">هیچ هتلی وجود ندارد</h3>
+                        <h3 class="text-lg font-bold text-gray-600 dark:text-gray-300 mb-2">هیچ هوتلی وجود ندارد</h3>
                         <a href="{{ route('admin.hotels.create') }}" class="bg-blue-500 text-white px-6 py-2 rounded-xl font-bold hover:bg-blue-600 transition-colors inline-block">
-                            افزودن هتل جدید
+                            افزودن هوتل جدید
                         </a>
                     </td>
                 </tr>

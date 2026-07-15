@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'افغان کویست') | کاوش در افغانستان</title>
+<title>@yield('title', app()->getLocale() === 'en' ? 'Afghan Quest' : 'افغان کویست') | {{ app()->getLocale() === 'en' ? 'Explore Afghanistan' : 'کاوش در افغانستان' }}</title>
 
 <!-- SEO Meta Tags -->
-<meta name="description" content="@yield('meta_description', app()->getLocale() === 'en' ? 'Afghan Quest - Discover the beauty of Afghanistan. Explore provinces, destinations, hotels, and tour packages.' : 'افغان کویست - کشف زیبایی‌های افغانستان. کاوش در ولایات، مقاصد، هتل‌ها و پکیج‌های تور.')">
-<meta name="keywords" content="@yield('meta_keywords', 'Afghanistan, tourism, travel, provinces, hotels, tours, افغانستان, گردشگری, سفر, ولایات, هتل, تور')">
+<meta name="description" content="@yield('meta_description', app()->getLocale() === 'en' ? 'Afghan Quest - Discover the beauty of Afghanistan. Explore provinces, destinations, hotels, and tour packages.' : 'افغان کویست - کشف زیبایی‌های افغانستان. کاوش در ولایات، مکان ها، هوتل‌ها و پکیج‌های تور.')">
+<meta name="keywords" content="@yield('meta_keywords', 'Afghanistan, tourism, travel, provinces, hotels, tours, افغانستان, گردشگری, سفر, ولایات, هوتل, تور')">
 <meta name="author" content="Afghan Quest">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="{{ url()->current() }}">

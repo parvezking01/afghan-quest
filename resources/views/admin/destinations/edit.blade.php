@@ -1,8 +1,8 @@
 @extends('layouts.admin')
 
-@section('title', 'ویرایش مقصد')
+@section('title', 'ویرایش مکان')
 @section('page_title', 'ویرایش: ' . $destination->name)
-@section('page_subtitle', 'اطلاعات مقصد را بروزرسانی کنید')
+@section('page_subtitle', 'اطلاعات مکان را بروزرسانی کنید')
 
 @section('content')
 
@@ -23,7 +23,7 @@
 
             <div class="grid md:grid-cols-2 gap-6">
                 <div>
-                    <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">نام مقصد (دری) *</label>
+                    <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">نام مکان (دری) *</label>
                     <input type="text" name="name" value="{{ old('name', $destination->name) }}" class="w-full px-4 py-3 border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500" required>
                 </div>
 
@@ -138,7 +138,7 @@
             @csrf
             @method('DELETE')
             <button type="button" onclick="confirmDelete(this.parentElement)" class="text-red-500 hover:text-red-700 font-bold text-sm">
-                <i class="fas fa-trash ms-1"></i> حذف این مقصد
+                <i class="fas fa-trash ms-1"></i> حذف این مکان
             </button>
         </form>
     </div>

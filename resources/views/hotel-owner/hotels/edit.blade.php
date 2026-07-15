@@ -1,8 +1,8 @@
 @extends('layouts.hotel-owner')
 
-@section('title', 'ویرایش هتل')
+@section('title', 'ویرایش هوتل')
 @section('page_title', 'ویرایش: ' . $hotel->name)
-@section('page_subtitle', 'اطلاعات هتل را بروزرسانی کنید')
+@section('page_subtitle', 'اطلاعات هوتل را بروزرسانی کنید')
 
 @section('content')
 
@@ -13,7 +13,7 @@
             @method('PUT')
 
             <div class="mb-6">
-                <label class="block text-sm font-bold text-gray-700 mb-2">نام هتل *</label>
+                <label class="block text-sm font-bold text-gray-700 mb-2">نام هوتل *</label>
                 <input type="text" name="name" value="{{ old('name', $hotel->name) }}" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
             </div>
 

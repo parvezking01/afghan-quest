@@ -14,10 +14,10 @@
         <p class="text-blue-100 text-lg">{{ app()->getLocale() === 'en' ? 'Ready for your next adventure?' : 'آماده ماجراجویی بعدی هستید؟' }}</p>
         <div class="flex gap-4 mt-6">
             <a href="{{ route('packages.index') }}" class="bg-white text-blue-600 px-6 py-3 rounded-xl font-bold hover:shadow-lg transition-all">
-                <i class="fas fa-suitcase ms-1"></i> {{ app()->getLocale() === 'en' ? 'View Tours' : 'مشاهده تورها' }}
+                <i class="fas fa-suitcase ms-1"></i> {{ app()->getLocale() === 'en' ? 'View Tours' : 'مشاهده پکیج ها' }}
             </a>
             <a href="{{ route('provinces.index') }}" class="bg-white/20 text-white px-6 py-3 rounded-xl font-bold hover:bg-white/30 transition-all backdrop-blur-sm">
-                <i class="fas fa-compass ms-1"></i> {{ app()->getLocale() === 'en' ? 'Explore' : 'کشف مقاصد' }}
+                <i class="fas fa-compass ms-1"></i> {{ app()->getLocale() === 'en' ? 'Explore' : 'کشف مکان ها' }}
             </a>
         </div>
     </div>
@@ -48,13 +48,13 @@
         <div class="w-14 h-14 bg-blue-50 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover:bg-blue-100 dark:group-hover:bg-blue-900/50 transition-colors">
             <i class="fas fa-suitcase text-blue-600 dark:text-blue-400 text-2xl"></i>
         </div>
-        <span class="font-bold text-gray-600 dark:text-gray-300 text-sm">{{ app()->getLocale() === 'en' ? 'Book Tour' : 'رزرو تور' }}</span>
+        <span class="font-bold text-gray-600 dark:text-gray-300 text-sm">{{ app()->getLocale() === 'en' ? 'Book Tour' : 'رزرو پکیج' }}</span>
     </a>
     <a href="{{ route('hotels.index') }}" class="bg-white dark:bg-gray-800 rounded-2xl p-5 border border-gray-100 dark:border-gray-700 text-center hover:shadow-lg hover:border-emerald-200 dark:hover:border-emerald-800 transition-all group">
         <div class="w-14 h-14 bg-emerald-50 dark:bg-emerald-900/30 rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover:bg-emerald-100 dark:group-hover:bg-emerald-900/50 transition-colors">
             <i class="fas fa-hotel text-emerald-600 dark:text-emerald-400 text-2xl"></i>
         </div>
-        <span class="font-bold text-gray-600 dark:text-gray-300 text-sm">{{ app()->getLocale() === 'en' ? 'Book Hotel' : 'رزرو هتل' }}</span>
+        <span class="font-bold text-gray-600 dark:text-gray-300 text-sm">{{ app()->getLocale() === 'en' ? 'Book Hotel' : 'رزرو هوتل' }}</span>
     </a>
     <a href="{{ route('tourist.bookings') }}" class="bg-white dark:bg-gray-800 rounded-2xl p-5 border border-gray-100 dark:border-gray-700 text-center hover:shadow-lg hover:border-purple-200 dark:hover:border-purple-800 transition-all group">
         <div class="w-14 h-14 bg-purple-50 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover:bg-purple-100 dark:group-hover:bg-purple-900/50 transition-colors">
@@ -97,7 +97,7 @@
                     </td>
                     <td class="py-4 px-4">
                         <span class="bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 px-3 py-1 rounded-lg text-xs font-medium">
-                            {{ $booking->booking_type === 'package' ? (app()->getLocale() === 'en' ? '📦 Tour' : '📦 تور') : (app()->getLocale() === 'en' ? '🏨 Hotel' : '🏨 هتل') }}
+                            {{ $booking->booking_type === 'package' ? (app()->getLocale() === 'en' ? '📦 Tour' : '📦 پکیج') : (app()->getLocale() === 'en' ? '🏨 Hotel' : '🏨 هوتل') }}
                         </span>
                     </td>
                     <td class="py-4 px-4">
@@ -132,7 +132,7 @@
                         <h3 class="text-lg font-bold text-gray-600 dark:text-gray-300 mb-2">{{ app()->getLocale() === 'en' ? 'No Bookings Yet' : 'هنوز رزروی ندارید' }}</h3>
                         <p class="text-gray-400 dark:text-gray-500 mb-4">{{ app()->getLocale() === 'en' ? 'Start your first journey with Afghan Quest' : 'اولین سفر خود را با افغان کویست آغاز کنید' }}</p>
                         <a href="{{ route('packages.index') }}" class="bg-blue-500 text-white px-6 py-2 rounded-xl font-bold hover:bg-blue-600 transition-colors inline-block">
-                            {{ app()->getLocale() === 'en' ? 'View Tours' : 'مشاهده تورها' }}
+                            {{ app()->getLocale() === 'en' ? 'View Tours' : 'مشاهده پکیج ها' }}
                         </a>
                     </td>
                 </tr>

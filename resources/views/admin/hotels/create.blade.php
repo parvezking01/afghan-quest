@@ -1,8 +1,8 @@
 @extends('layouts.admin')
 
-@section('title', 'افزودن هتل جدید')
-@section('page_title', 'افزودن هتل جدید')
-@section('page_subtitle', 'اطلاعات هتل را وارد کنید')
+@section('title', 'افزودن هوتل جدید')
+@section('page_title', 'افزودن هوتل جدید')
+@section('page_subtitle', 'اطلاعات هوتل را وارد کنید')
 
 @section('content')
 
@@ -16,7 +16,7 @@
 
                 <div class="grid md:grid-cols-3 gap-6 mb-6">
                     <div>
-                        <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">مالک هتل *</label>
+                        <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">مالک هوتل *</label>
                         <select name="user_id" class="w-full px-4 py-3 border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500" required>
                             <option value="">-- انتخاب مالک --</option>
                             @foreach($owners as $owner)
@@ -34,9 +34,9 @@
                         </select>
                     </div>
                     <div>
-                        <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">مقصد نزدیک <span class="text-gray-400 text-xs">(اختیاری)</span></label>
+                        <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">مکان نزدیک <span class="text-gray-400 text-xs">(اختیاری)</span></label>
                         <select name="destination_id" class="w-full px-4 py-3 border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500">
-                            <option value="">-- انتخاب مقصد --</option>
+                            <option value="">-- انتخاب مکان--</option>
                             @foreach($destinations as $dest)
                                 <option value="{{ $dest->id }}">{{ $dest->name }}</option>
                             @endforeach
@@ -46,8 +46,8 @@
 
                 <div class="grid md:grid-cols-2 gap-6">
                     <div>
-                        <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">نام هتل (دری) *</label>
-                        <input type="text" name="name" value="{{ old('name') }}" class="w-full px-4 py-3 border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="مثال: هتل کابل سرینا" required>
+                        <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">نام هوتل (دری) *</label>
+                        <input type="text" name="name" value="{{ old('name') }}" class="w-full px-4 py-3 border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="مثال: هوتل کابل سرینا" required>
                     </div>
                     <div>
                         <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">English Name <span class="text-gray-400 text-xs">(اختیاری)</span></label>
@@ -96,8 +96,8 @@
             <div class="mb-8">
                 <h3 class="text-lg font-black text-gray-800 dark:text-white mb-4 border-b border-gray-200 dark:border-gray-700 pb-2">📝 جزئیات</h3>
                 <div class="mb-6">
-                    <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">توضیحات هتل (دری) *</label>
-                    <textarea name="description" rows="4" class="w-full px-4 py-3 border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="امکانات، خدمات و ویژگی‌های هتل..." required>{{ old('description') }}</textarea>
+                    <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">توضیحات هوتل (دری) *</label>
+                    <textarea name="description" rows="4" class="w-full px-4 py-3 border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="امکانات، خدمات و ویژگی‌های هوتل..." required>{{ old('description') }}</textarea>
                 </div>
                 <div class="mb-6">
                     <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">English Description <span class="text-gray-400 text-xs">(اختیاری)</span></label>
@@ -154,7 +154,7 @@
 
             <div class="flex gap-3 mt-8">
                 <button type="submit" class="flex-1 bg-blue-500 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-600 hover:shadow-lg transition-all">
-                    <i class="fas fa-save ms-1"></i> ذخیره هتل
+                    <i class="fas fa-save ms-1"></i> ذخیره هوتل
                 </button>
                 <a href="{{ route('admin.hotels.index') }}" class="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 px-8 py-4 rounded-xl font-bold hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors flex items-center">
                     <i class="fas fa-times ms-1"></i> انصراف

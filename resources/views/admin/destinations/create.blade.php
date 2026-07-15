@@ -1,8 +1,8 @@
 @extends('layouts.admin')
 
-@section('title', 'افزودن مقصد جدید')
-@section('page_title', 'افزودن مقصد جدید')
-@section('page_subtitle', 'اطلاعات مقصد گردشگری را وارد کنید')
+@section('title', 'افزودن مکان جدید')
+@section('page_title', 'افزودن مکان جدید')
+@section('page_subtitle', 'اطلاعات مکان گردشگری را وارد کنید')
 
 @section('content')
 
@@ -23,7 +23,7 @@
 
             <div class="grid md:grid-cols-2 gap-6">
                 <div>
-                    <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">نام مقصد (دری) *</label>
+                    <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">نام مکان (دری) *</label>
                     <input type="text" name="name" value="{{ old('name') }}" class="w-full px-4 py-3 border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="مثال: بند امیر" required>
                 </div>
 
@@ -72,7 +72,7 @@
             <!-- Highlights -->
             <div class="mt-6">
                 <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">نکات برجسته</label>
-                <textarea name="highlights" rows="3" class="w-full px-4 py-3 border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="ویژگی‌های خاص این مقصد...">{{ old('highlights') }}</textarea>
+                <textarea name="highlights" rows="3" class="w-full px-4 py-3 border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="ویژگی‌های خاص این مکان...">{{ old('highlights') }}</textarea>
             </div>
 
             <!-- Featured Image -->
@@ -119,7 +119,7 @@
 
             <div class="flex gap-3 mt-8">
                 <button type="submit" class="flex-1 bg-blue-500 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-600 transition-all">
-                    <i class="fas fa-save ms-1"></i> ذخیره مقصد
+                    <i class="fas fa-save ms-1"></i> ذخیره مکان
                 </button>
                 <a href="{{ route('admin.destinations.index') }}" class="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 px-8 py-4 rounded-xl font-bold hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">انصراف</a>
             </div>

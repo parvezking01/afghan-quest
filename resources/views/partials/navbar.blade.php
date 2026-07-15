@@ -18,13 +18,13 @@
                         {{ app()->getLocale() === 'en' ? 'Provinces' : 'ولایات' }}
                     </a>
                     <a href="{{ route('destinations.index') }}" class="font-medium text-sm text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-gold-400 transition-colors">
-                        {{ app()->getLocale() === 'en' ? 'Destinations' : 'مقاصد' }}
+                        {{ app()->getLocale() === 'en' ? 'Destinations' : 'مکان ها' }}
                     </a>
                     <a href="{{ route('packages.index') }}" class="font-medium text-sm text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-gold-400 transition-colors">
-                        {{ app()->getLocale() === 'en' ? 'Tours' : 'تورها' }}
+                        {{ app()->getLocale() === 'en' ? 'Tours' : 'پکیج‌ها' }}
                     </a>
                     <a href="{{ route('hotels.index') }}" class="font-medium text-sm text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-gold-400 transition-colors">
-                        {{ app()->getLocale() === 'en' ? 'Hotels' : 'هتل‌ها' }}
+                        {{ app()->getLocale() === 'en' ? 'Hotels' : 'هوتل‌ها' }}
                     </a>
                 </div>
             </div>
@@ -117,9 +117,9 @@
                 <!-- Mobile Nav Links -->
                 <a href="{{ url('/') }}" class="py-2 px-4 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 font-medium dark:text-gray-200 text-sm">{{ app()->getLocale() === 'en' ? 'Home' : 'صفحه اصلی' }}</a>
                 <a href="{{ route('provinces.index') }}" class="py-2 px-4 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 font-medium dark:text-gray-200 text-sm">{{ app()->getLocale() === 'en' ? 'Provinces' : 'ولایات' }}</a>
-                <a href="{{ route('destinations.index') }}" class="py-2 px-4 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 font-medium dark:text-gray-200 text-sm">{{ app()->getLocale() === 'en' ? 'Destinations' : 'مقاصد' }}</a>
-                <a href="{{ route('packages.index') }}" class="py-2 px-4 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 font-medium dark:text-gray-200 text-sm">{{ app()->getLocale() === 'en' ? 'Tours' : 'تورها' }}</a>
-                <a href="{{ route('hotels.index') }}" class="py-2 px-4 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 font-medium dark:text-gray-200 text-sm">{{ app()->getLocale() === 'en' ? 'Hotels' : 'هتل‌ها' }}</a>
+                <a href="{{ route('destinations.index') }}" class="py-2 px-4 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 font-medium dark:text-gray-200 text-sm">{{ app()->getLocale() === 'en' ? 'Destinations' : 'مکان ها' }}</a>
+                <a href="{{ route('packages.index') }}" class="py-2 px-4 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 font-medium dark:text-gray-200 text-sm">{{ app()->getLocale() === 'en' ? 'Tours' : 'پکیج ها' }}</a>
+                <a href="{{ route('hotels.index') }}" class="py-2 px-4 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 font-medium dark:text-gray-200 text-sm">{{ app()->getLocale() === 'en' ? 'Hotels' : 'هوتل‌ها' }}</a>
 
                 <hr class="dark:border-gray-600">
 

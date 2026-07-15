@@ -24,14 +24,14 @@
                     </span>
                 </h1>
                 <p class="text-xl text-gray-300 mb-8 leading-relaxed">
-                    {{ app()->getLocale() === 'en' ? 'Travel to the most amazing historical and natural destinations of Afghanistan with the best tourism services' : 'سفر به شگفت‌انگیزترین مقاصد تاریخی و طبیعی افغانستان با بهترین خدمات گردشگری' }}
+                    {{ app()->getLocale() === 'en' ? 'Travel to the most amazing historical and natural destinations of Afghanistan with the best tourism services' : 'سفر به شگفت‌انگیزترین مکان های تاریخی و طبیعی افغانستان با بهترین خدمات گردشگری' }}
                 </p>
                 <div class="flex flex-wrap gap-4">
                     <a href="{{ route('packages.index') }}" class="gradient-gold text-primary-900 px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl hover:shadow-gold-500/30 transition-all inline-block transform hover:-translate-y-1">
-                        <i class="fas fa-suitcase ms-2"></i> {{ app()->getLocale() === 'en' ? 'View Tours' : 'مشاهده تورها' }}
+                        <i class="fas fa-suitcase ms-2"></i> {{ app()->getLocale() === 'en' ? 'View Tours' : 'مشاهده پکیج ها' }}
                     </a>
                     <a href="{{ route('provinces.index') }}" class="border-2 border-white/50 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-primary-900 transition-all inline-block backdrop-blur-sm">
-                        <i class="fas fa-compass ms-2"></i> {{ app()->getLocale() === 'en' ? 'Explore Destinations' : 'کشف مقاصد' }}
+                        <i class="fas fa-compass ms-2"></i> {{ app()->getLocale() === 'en' ? 'Explore Destinations' : 'کشف مکان ها' }}
                     </a>
                 </div>
 
@@ -44,17 +44,17 @@
                     <div class="w-px bg-white/20"></div>
                     <div class="text-center">
                         <div class="text-4xl font-black text-gold-400 counter" data-target="{{ $destinationsCount }}">0</div>
-                        <div class="text-gray-300 text-sm mt-1">{{ app()->getLocale() === 'en' ? 'Destinations' : 'مقصد' }}</div>
+                        <div class="text-gray-300 text-sm mt-1">{{ app()->getLocale() === 'en' ? 'Destinations' : 'مکان' }}</div>
                     </div>
                     <div class="w-px bg-white/20"></div>
                     <div class="text-center">
                         <div class="text-4xl font-black text-gold-400 counter" data-target="{{ $hotelsCount }}">0</div>
-                        <div class="text-gray-300 text-sm mt-1">{{ app()->getLocale() === 'en' ? 'Hotels' : 'هتل' }}</div>
+                        <div class="text-gray-300 text-sm mt-1">{{ app()->getLocale() === 'en' ? 'Hotels' : 'هوتل' }}</div>
                     </div>
                     <div class="w-px bg-white/20"></div>
                     <div class="text-center">
                         <div class="text-4xl font-black text-gold-400 counter" data-target="{{ $packagesCount }}">0</div>
-                        <div class="text-gray-300 text-sm mt-1">{{ app()->getLocale() === 'en' ? 'Tour Packages' : 'پکیج تور' }}</div>
+                        <div class="text-gray-300 text-sm mt-1">{{ app()->getLocale() === 'en' ? 'Tour Packages' : 'پکیج سیاحتی' }}</div>
                     </div>
                 </div>
             </div>
@@ -85,14 +85,14 @@
     <div class="container mx-auto px-4">
         <div class="text-center mb-16" data-aos="fade-up">
             <span class="text-primary-500 font-bold text-sm bg-primary-50 dark:bg-primary-900/30 px-4 py-2 rounded-full inline-block mb-4">
-                {{ app()->getLocale() === 'en' ? 'Popular Destinations' : 'مقاصد محبوب' }}
+                {{ app()->getLocale() === 'en' ? 'Popular Destinations' : 'مکان ها محبوب' }}
             </span>
             <h2 class="text-4xl lg:text-5xl font-black text-primary-800 dark:text-white mb-4">
                 {{ app()->getLocale() === 'en' ? 'Trending Provinces' : 'ولایات پرطرفدار' }}
             </h2>
             <div class="section-divider"></div>
             <p class="text-gray-500 dark:text-gray-400 text-lg">
-                {{ app()->getLocale() === 'en' ? 'Most popular tourist destinations in Afghanistan' : 'محبوب‌ترین مقاصد گردشگری افغانستان' }}
+                {{ app()->getLocale() === 'en' ? 'Most popular tourist destinations in Afghanistan' : 'محبوب‌ترین مکان ها گردشگری افغانستان' }}
             </p>
         </div>
 
@@ -147,7 +147,7 @@
                 {{ app()->getLocale() === 'en' ? 'Must-See Places' : 'جاهای دیدنی' }}
             </span>
             <h2 class="text-4xl lg:text-5xl font-black text-primary-800 dark:text-white mb-4">
-                {{ app()->getLocale() === 'en' ? 'Popular Destinations' : 'مقاصد دیدنی' }}
+                {{ app()->getLocale() === 'en' ? 'Popular Destinations' : 'مکان‌های دیدنی' }}
             </h2>
             <div class="section-divider"></div>
             <p class="text-gray-500 dark:text-gray-400 text-lg">
@@ -180,7 +180,7 @@
                 {{ app()->getLocale() === 'en' ? 'Special Packages' : 'پکیج‌های ویژه' }}
             </span>
             <h2 class="text-4xl lg:text-5xl font-black text-primary-800 dark:text-white mb-4">
-                {{ app()->getLocale() === 'en' ? 'Featured Tours' : 'تورهای ویژه' }}
+                {{ app()->getLocale() === 'en' ? 'Featured Tours' : 'پکیج‌های ویژه' }}
             </h2>
             <div class="section-divider"></div>
             <p class="text-gray-500 dark:text-gray-400 text-lg">
@@ -216,7 +216,7 @@
                     <p class="text-gray-600 dark:text-gray-300 mb-6">{{ Str::limit(locale_field($package, 'description'), 100) }}</p>
                     <a href="{{ route('packages.show', $package->slug) }}"
                        class="block text-center gradient-btn text-white py-3 rounded-xl font-bold group/btn hover:shadow-xl transition-all">
-                        {{ app()->getLocale() === 'en' ? 'Book Tour' : 'رزرو تور' }}
+                        {{ app()->getLocale() === 'en' ? 'Book Tour' : 'رزرو پکیج ها' }}
                         <i class="fas fa-arrow-left mr-2"></i>
                     </a>
                 </div>
@@ -278,11 +278,11 @@
             {{ app()->getLocale() === 'en' ? 'Ready for an Adventure in Afghanistan?' : 'آماده ماجراجویی در افغانستان هستید؟' }}
         </h2>
         <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            {{ app()->getLocale() === 'en' ? 'Book your tour now and start an unforgettable experience in the heart of Afghanistan\'s history and nature' : 'همین حالا تور خود را رزرو کنید و تجربه‌ای فراموش‌نشدنی را در دل تاریخ و طبیعت افغانستان آغاز کنید' }}
+            {{ app()->getLocale() === 'en' ? 'Book your tour now and start an unforgettable experience in the heart of Afghanistan\'s history and nature' : 'همین حالا سیاحت خود را رزرو کنید و تجربه‌ای فراموش‌نشدنی را در دل تاریخ و طبیعت افغانستان آغاز کنید' }}
         </p>
         <div class="flex flex-wrap justify-center gap-4">
             <a href="{{ route('packages.index') }}" class="gradient-gold text-primary-900 px-10 py-4 rounded-full font-bold text-lg hover:shadow-2xl transition-all transform hover:-translate-y-1">
-                <i class="fas fa-suitcase ms-2"></i> {{ app()->getLocale() === 'en' ? 'Book a Tour' : 'رزرو تور' }}
+                <i class="fas fa-suitcase ms-2"></i> {{ app()->getLocale() === 'en' ? 'Book a Tour' : 'رزرو پکیج ها' }}
             </a>
             <a href="https://wa.me/93700000000" target="_blank" class="bg-green-500 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-green-600 transition-all transform hover:-translate-y-1">
                 <i class="fab fa-whatsapp ms-2"></i> {{ app()->getLocale() === 'en' ? 'WhatsApp' : 'واتساپ' }}

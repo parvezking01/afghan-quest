@@ -1,16 +1,16 @@
 @extends('layouts.admin')
 
 @section('title', 'مدیریت مقاصد')
-@section('page_title', 'مدیریت مقاصد گردشگری')
-@section('page_subtitle', 'لیست تمام مقاصد گردشگری')
+@section('page_title', 'مدیریت مکان های گردشگری')
+@section('page_subtitle', 'لیست تمام مکان های گردشگری')
 
 @section('content')
 
 <div class="flex items-center justify-between mb-6">
-    <p class="text-gray-500 dark:text-gray-400">کل: <span class="font-bold text-gray-700 dark:text-white">{{ $destinations->total() }}</span> مقصد</p>
+    <p class="text-gray-500 dark:text-gray-400">کل: <span class="font-bold text-gray-700 dark:text-white">{{ $destinations->total() }}</span> مکان</p>
     <a href="{{ route('admin.destinations.create') }}"
        class="bg-blue-500 text-white px-6 py-3 rounded-xl font-bold hover:bg-blue-600 transition-colors">
-        <i class="fas fa-plus ms-1"></i> افزودن مقصد جدید
+        <i class="fas fa-plus ms-1"></i> افزودن مکان جدید
     </a>
 </div>
 
@@ -21,7 +21,7 @@
                 <tr class="bg-gray-50 dark:bg-gray-700/50">
                     <th class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase">#</th>
                     <th class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase">تصویر</th>
-                    <th class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase">نام مقصد</th>
+                    <th class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase">نام مکان</th>
                     <th class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase">ولایت</th>
                     <th class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase">سختی</th>
                     <th class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase">پرطرفدار</th>
@@ -88,9 +88,9 @@
                 <tr>
                     <td colspan="8" class="text-center py-12">
                         <div class="text-5xl mb-4">🏛️</div>
-                        <h3 class="text-lg font-bold text-gray-600 dark:text-gray-300 mb-2">هیچ مقصدی وجود ندارد</h3>
+                        <h3 class="text-lg font-bold text-gray-600 dark:text-gray-300 mb-2">هیچ مکانی وجود ندارد</h3>
                         <a href="{{ route('admin.destinations.create') }}" class="bg-blue-500 text-white px-6 py-2 rounded-xl font-bold hover:bg-blue-600 transition-colors inline-block">
-                            افزودن مقصد جدید
+                            افزودن مکان جدید
                         </a>
                     </td>
                 </tr>

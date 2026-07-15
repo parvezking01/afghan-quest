@@ -12,7 +12,7 @@
                     <span>🏔️</span> {{ app()->getLocale() === 'en' ? 'Afghan Quest' : 'افغان کویست' }}
                 </h3>
                 <p class="text-gray-400 leading-relaxed">
-                    {{ app()->getLocale() === 'en' ? 'Experience the best travel to Afghanistan with us. Explore the most beautiful historical and natural destinations.' : 'بهترین تجربه سفر به افغانستان را با ما داشته باشید. کاوش در زیباترین مقاصد تاریخی و طبیعی.' }}
+                    {{ app()->getLocale() === 'en' ? 'Experience the best travel to Afghanistan with us. Explore the most beautiful historical and natural destinations.' : 'بهترین تجربه سفر به افغانستان را با ما داشته باشید. کاوش در زیباترین مکان ها تاریخی و طبیعی.' }}
                 </p>
                 <div class="flex gap-3 mt-6">
                     <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold-500 hover:text-primary-900 transition-all duration-300">
@@ -36,9 +36,9 @@
                 <ul class="space-y-2">
                     <li><a href="{{ url('/') }}" class="text-gray-400 hover:text-gold-400 transition-colors">{{ app()->getLocale() === 'en' ? 'Home' : 'صفحه اصلی' }}</a></li>
                     <li><a href="{{ route('provinces.index') }}" class="text-gray-400 hover:text-gold-400 transition-colors">{{ app()->getLocale() === 'en' ? 'Provinces' : 'ولایات' }}</a></li>
-                    <li><a href="{{ route('destinations.index') }}" class="text-gray-400 hover:text-gold-400 transition-colors">{{ app()->getLocale() === 'en' ? 'Destinations' : 'مقاصد' }}</a></li>
-                    <li><a href="{{ route('packages.index') }}" class="text-gray-400 hover:text-gold-400 transition-colors">{{ app()->getLocale() === 'en' ? 'Tours' : 'تورها' }}</a></li>
-                    <li><a href="{{ route('hotels.index') }}" class="text-gray-400 hover:text-gold-400 transition-colors">{{ app()->getLocale() === 'en' ? 'Hotels' : 'هتل‌ها' }}</a></li>
+                    <li><a href="{{ route('destinations.index') }}" class="text-gray-400 hover:text-gold-400 transition-colors">{{ app()->getLocale() === 'en' ? 'Destinations' : 'مکان ها' }}</a></li>
+                    <li><a href="{{ route('packages.index') }}" class="text-gray-400 hover:text-gold-400 transition-colors">{{ app()->getLocale() === 'en' ? 'Tours' : 'پکیج‌ها' }}</a></li>
+                    <li><a href="{{ route('hotels.index') }}" class="text-gray-400 hover:text-gold-400 transition-colors">{{ app()->getLocale() === 'en' ? 'Hotels' : 'هوتل‌ها' }}</a></li>
                 </ul>
             </div>
 

@@ -2,7 +2,7 @@
 
 @section('title', 'رزروها')
 @section('page_title', 'مدیریت رزروها')
-@section('page_subtitle', 'مشاهده و تایید رزروهای هتل‌های شما')
+@section('page_subtitle', 'مشاهده و تایید رزروهای هوتل‌های شما')
 
 @section('content')
 
@@ -13,7 +13,7 @@
                 <tr class="bg-gray-50 dark:bg-gray-700/50">
                     <th class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase">شماره رزرو</th>
                     <th class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase">مهمان</th>
-                    <th class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase">هتل</th>
+                    <th class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase">هوتل</th>
                     <th class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase">نوع اتاق</th>
                     <th class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase">تاریخ</th>
                     <th class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase">مبلغ</th>

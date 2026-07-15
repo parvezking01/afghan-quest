@@ -4,7 +4,7 @@
 
 @section('content')
 
-<section class="relative py-20" style="background: linear-gradient(rgba(26, 26, 46, 0.85), rgba(22, 33, 62, 0.9)), url('https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?w=1920') center/cover;">
+<section class="relative py-20" style="background: linear-gradient(rgba(26, 26, 46, 0.85), rgba(22, 33, 62, 0.9)), url('{{ asset('images/KABUL.jpg') }}') center/cover;">
     <div class="container mx-auto px-4 text-center relative z-10">
         <h1 class="text-4xl lg:text-5xl font-black text-white mb-4">{{ app()->getLocale() === 'en' ? 'Provinces of Afghanistan' : 'ولایات افغانستان' }}</h1>
         <p class="text-xl text-gray-300">{{ app()->getLocale() === 'en' ? 'Explore the 34 beautiful provinces of Afghanistan' : 'کاوش در ۳۴ ولایت زیبای افغانستان' }}</p>
