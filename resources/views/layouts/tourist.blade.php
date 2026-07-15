@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() === 'en' ? 'en' : 'fa' }}" dir="{{ app()->getLocale() === 'en' ? 'ltr' : 'rtl' }}" class="scroll-smooth">
+<html lang="{{ app()->getLocale() === 'en' ? 'en' : 'fa' }}" dir="{{ app()->getLocale() === 'en' ? 'ltr' : 'rtl' }}"
+    class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
@@ -39,33 +40,43 @@
         .dark body {
             background: #0f172a;
         }
+
         .dark .bg-white {
             background: #1e293b !important;
         }
+
         .dark .bg-gray-50 {
             background: #0f172a !important;
         }
+
         .dark .text-gray-800 {
             color: #f1f5f9 !important;
         }
+
         .dark .text-gray-700 {
             color: #e2e8f0 !important;
         }
+
         .dark .text-gray-600 {
             color: #cbd5e1 !important;
         }
+
         .dark .text-gray-500 {
             color: #94a3b8 !important;
         }
+
         .dark .text-gray-400 {
             color: #64748b !important;
         }
+
         .dark .border-gray-100 {
             border-color: #334155 !important;
         }
+
         .dark .border-gray-200 {
             border-color: #334155 !important;
         }
+
         .dark input,
         .dark textarea,
         .dark select {
@@ -73,6 +84,7 @@
             color: #e2e8f0 !important;
             border-color: #475569 !important;
         }
+
         .dark input::placeholder,
         .dark textarea::placeholder {
             color: #64748b !important;
@@ -83,12 +95,15 @@
             background: #1e293b !important;
             border-color: #334155 !important;
         }
+
         .dark nav .text-gray-800 {
             color: #f1f5f9 !important;
         }
+
         .dark nav .text-gray-500 {
             color: #94a3b8 !important;
         }
+
         .dark nav .text-gray-600 {
             color: #cbd5e1 !important;
         }
@@ -98,13 +113,16 @@
 <body class="font-dari dark:bg-gray-900 transition-colors duration-300">
 
     <!-- Top Navbar -->
-    <nav class="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700 sticky top-0 z-30 transition-colors duration-300">
+    <nav
+        class="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700 sticky top-0 z-30 transition-colors duration-300">
         <div class="container mx-auto px-4">
             <div class="flex items-center justify-between h-16">
                 <!-- Logo -->
                 <a href="{{ url('/') }}" class="flex items-center gap-2 text-xl font-black">
-                    <span>🏔️</span>
-                    <span class="text-gray-800 dark:text-white">{{ app()->getLocale() === 'en' ? 'Afghan Quest' : 'افغان کویست' }}</span>
+                    <img src="{{ asset('images/logo.png') }}" alt="Afghan Quest Logo" class="h-16 w-auto">
+
+                    <span
+                        class="text-gray-800 dark:text-white">{{ app()->getLocale() === 'en' ? 'Afghan Quest' : 'افغان کویست' }}</span>
                 </a>
 
                 <!-- Navigation -->
@@ -130,23 +148,26 @@
                 <!-- Language Switcher + User Menu + Dark Mode Toggle -->
                 <div class="flex items-center gap-3">
                     <!-- Language Switcher -->
-                    <div class="flex items-center gap-1 border border-gray-300 dark:border-gray-600 rounded-full overflow-hidden">
-                        <a href="{{ route('language.switch', 'fa') }}"
-                           class="px-2 py-1 text-xs font-bold transition-all {{ app()->getLocale() === 'fa' ? 'bg-primary-500 text-white' : 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700' }}">
-                            FA
-                        </a>
-                        <a href="{{ route('language.switch', 'en') }}"
-                           class="px-2 py-1 text-xs font-bold transition-all {{ app()->getLocale() === 'en' ? 'bg-primary-500 text-white' : 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700' }}">
-                            EN
-                        </a>
-                    </div>
+                    <div class="flex items-center gap-1 border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 rounded-full overflow-hidden">
+    <a href="{{ route('language.switch', 'fa') }}"
+        class="px-2 py-1 text-xs font-bold transition-all {{ app()->getLocale() === 'fa' ? 'bg-primary-500 dark:bg-primary-700 text-white' : 'text-gray-800 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700' }}">
+        FA
+    </a>
+    <a href="{{ route('language.switch', 'en') }}"
+        class="px-2 py-1 text-xs font-bold transition-all {{ app()->getLocale() === 'en' ? 'bg-primary-500 dark:bg-primary-700 text-white' : 'text-gray-800 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700' }}">
+        EN
+    </a>
+</div>
 
                     <!-- Dark Mode Toggle -->
-                    <button onclick="toggleDarkMode()" class="text-gray-500 dark:text-gray-400 hover:text-yellow-500 dark:hover:text-yellow-400 transition-colors text-xl p-2" title="حالت شب/روز">
+                    <button onclick="toggleDarkMode()"
+                        class="text-gray-500 dark:text-gray-400 hover:text-yellow-500 dark:hover:text-yellow-400 transition-colors text-xl p-2"
+                        title="حالت شب/روز">
                         <i id="darkIcon" class="fas fa-moon"></i>
                     </button>
 
-                    <span class="text-sm text-gray-600 dark:text-gray-300 hidden md:block">{{ auth()->user()->name }}</span>
+                    <span
+                        class="text-sm text-gray-600 dark:text-gray-300 hidden md:block">{{ auth()->user()->name }}</span>
                     <div
                         class="w-9 h-9 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
                         {{ mb_substr(auth()->user()->name, 0, 1) }}
@@ -165,7 +186,8 @@
     <!-- Main Content -->
     <main class="container mx-auto px-4 py-8">
         @if (session('success'))
-            <div class="bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-800 text-green-700 dark:text-green-400 px-4 py-3 rounded-xl mb-6">
+            <div
+                class="bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-800 text-green-700 dark:text-green-400 px-4 py-3 rounded-xl mb-6">
                 ✅ {{ session('success') }}
             </div>
         @endif

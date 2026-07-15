@@ -32,114 +32,132 @@
         }
     </script>
 
-<style>
-    * {
-        font-family: 'Vazirmatn', Tahoma, sans-serif;
-    }
+    <style>
+        * {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+        }
 
-    body {
-        background: #f1f5f9;
-    }
+        body {
+            background: #f1f5f9;
+        }
 
-    .dark body {
-        background: #0f172a;
-    }
+        .dark body {
+            background: #0f172a;
+        }
 
-    /* Custom Scrollbar - ALWAYS DARK */
-    ::-webkit-scrollbar {
-        width: 6px;
-        height: 6px;
-    }
-    ::-webkit-scrollbar-track {
-        background: #1e293b;
-    }
-    ::-webkit-scrollbar-thumb {
-        background: #475569;
-        border-radius: 3px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-        background: #64748b;
-    }
+        /* Custom Scrollbar - ALWAYS DARK */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
 
-    /* Firefox Scrollbar - ALWAYS DARK */
-    * {
-        scrollbar-width: thin;
-        scrollbar-color: #475569 #1e293b;
-    }
+        ::-webkit-scrollbar-track {
+            background: #1e293b;
+        }
 
-    /* Dark Mode - Main Content */
-    .dark .bg-white {
-        background: #1e293b !important;
-    }
-    .dark .bg-gray-100 {
-        background: #0f172a !important;
-    }
-    .dark .bg-gray-50 {
-        background: #1a1f2e !important;
-    }
-    .dark .text-gray-900 {
-        color: #f1f5f9 !important;
-    }
-    .dark .text-gray-800 {
-        color: #e2e8f0 !important;
-    }
-    .dark .text-gray-700 {
-        color: #cbd5e1 !important;
-    }
-    .dark .text-gray-600 {
-        color: #94a3b8 !important;
-    }
-    .dark .text-gray-500 {
-        color: #64748b !important;
-    }
-    .dark .text-gray-400 {
-        color: #475569 !important;
-    }
-    .dark .border-gray-100 {
-        border-color: #334155 !important;
-    }
-    .dark .border-gray-200 {
-        border-color: #334155 !important;
-    }
-    .dark input,
-    .dark textarea,
-    .dark select {
-        background: #1e293b !important;
-        color: #e2e8f0 !important;
-        border-color: #475569 !important;
-    }
-    .dark input::placeholder,
-    .dark textarea::placeholder {
-        color: #64748b !important;
-    }
-    .dark .shadow-sm {
-        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4) !important;
-    }
-    .dark .hover\:bg-gray-50:hover {
-        background: #1a1f2e !important;
-    }
-    .dark .hover\:bg-gray-100:hover {
-        background: #1e293b !important;
-    }
+        ::-webkit-scrollbar-thumb {
+            background: #475569;
+            border-radius: 3px;
+        }
 
-    .sidebar-link {
-        transition: all 0.3s ease;
-        color: #94a3b8;
-    }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #64748b;
+        }
 
-    .sidebar-link:hover {
-        background: #1a2d3d;
-        color: #F4D03F;
-        padding-right: 24px;
-    }
+        /* Firefox Scrollbar - ALWAYS DARK */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #475569 #1e293b;
+        }
 
-    .sidebar-link.active {
-        background: #1a2d3d;
-        color: #F4D03F;
-        border-right: 3px solid #F4D03F;
-        font-weight: bold;
-    }
-</style>
+        /* Dark Mode - Main Content */
+        .dark .bg-white {
+            background: #1e293b !important;
+        }
+
+        .dark .bg-gray-100 {
+            background: #0f172a !important;
+        }
+
+        .dark .bg-gray-50 {
+            background: #1a1f2e !important;
+        }
+
+        .dark .text-gray-900 {
+            color: #f1f5f9 !important;
+        }
+
+        .dark .text-gray-800 {
+            color: #e2e8f0 !important;
+        }
+
+        .dark .text-gray-700 {
+            color: #cbd5e1 !important;
+        }
+
+        .dark .text-gray-600 {
+            color: #94a3b8 !important;
+        }
+
+        .dark .text-gray-500 {
+            color: #64748b !important;
+        }
+
+        .dark .text-gray-400 {
+            color: #475569 !important;
+        }
+
+        .dark .border-gray-100 {
+            border-color: #334155 !important;
+        }
+
+        .dark .border-gray-200 {
+            border-color: #334155 !important;
+        }
+
+        .dark input,
+        .dark textarea,
+        .dark select {
+            background: #1e293b !important;
+            color: #e2e8f0 !important;
+            border-color: #475569 !important;
+        }
+
+        .dark input::placeholder,
+        .dark textarea::placeholder {
+            color: #64748b !important;
+        }
+
+        .dark .shadow-sm {
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4) !important;
+        }
+
+        .dark .hover\:bg-gray-50:hover {
+            background: #1a1f2e !important;
+        }
+
+        .dark .hover\:bg-gray-100:hover {
+            background: #1e293b !important;
+        }
+
+        .sidebar-link {
+            transition: all 0.3s ease;
+            color: #94a3b8;
+        }
+
+        .sidebar-link:hover {
+            background: #1a2d3d;
+            color: #F4D03F;
+            padding-right: 24px;
+        }
+
+        .sidebar-link.active {
+            background: #1a2d3d;
+            color: #F4D03F;
+            border-right: 3px solid #F4D03F;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body class="font-dari">
@@ -149,7 +167,8 @@
         <aside class="w-72 flex flex-col fixed h-full z-30 shadow-2xl" style="background: #0f1923;">
             <div class="p-6 border-b border-gray-700">
                 <a href="{{ url('/') }}" class="flex items-center gap-3 text-2xl font-black">
-                    <span class="text-3xl">🏔️</span>
+                    <img src="{{ asset('images/logo.png') }}" alt="Afghan Quest Logo" class="h-16 w-auto">
+
                     <span style="color: #F4D03F;">افغان کویست</span>
                 </a>
                 <p class="text-gray-400 text-sm mt-1 mr-2">پنل مدیریت</p>
@@ -244,14 +263,17 @@
         </aside>
 
         <main class="flex-1 mr-72 overflow-y-auto bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
-            <header class="bg-white dark:bg-gray-800 shadow-sm sticky top-0 z-20 border-b border-gray-200 dark:border-gray-700 transition-colors duration-300">
+            <header
+                class="bg-white dark:bg-gray-800 shadow-sm sticky top-0 z-20 border-b border-gray-200 dark:border-gray-700 transition-colors duration-300">
                 <div class="flex items-center justify-between px-8 py-5">
                     <div>
                         <h1 class="text-2xl font-black text-gray-900 dark:text-white">@yield('page_title', 'داشبورد')</h1>
                         <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">@yield('page_subtitle', 'خوش آمدید ' . auth()->user()->name)</p>
                     </div>
                     <div class="flex items-center gap-3">
-                        <button onclick="toggleDarkMode()" class="text-gray-500 dark:text-gray-300 hover:text-yellow-500 transition-colors text-xl p-2" title="حالت شب/روز">
+                        <button onclick="toggleDarkMode()"
+                            class="text-gray-500 dark:text-gray-300 hover:text-yellow-500 transition-colors text-xl p-2"
+                            title="حالت شب/روز">
                             <i id="darkIcon" class="fas fa-moon"></i>
                         </button>
                         <a href="{{ url('/') }}"
@@ -270,25 +292,48 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 800, once: true });
+        AOS.init({
+            duration: 800,
+            once: true
+        });
     </script>
 
     @if (session('success'))
-    <script>
-        Swal.fire({ icon: 'success', title: 'موفقیت‌آمیز!', text: '{{ session('success') }}', confirmButtonText: 'باشه', confirmButtonColor: '#1B5E20', timer: 4000, timerProgressBar: true });
-    </script>
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'موفقیت‌آمیز!',
+                text: '{{ session('success') }}',
+                confirmButtonText: 'باشه',
+                confirmButtonColor: '#1B5E20',
+                timer: 4000,
+                timerProgressBar: true
+            });
+        </script>
     @endif
 
     @if (session('error'))
-    <script>
-        Swal.fire({ icon: 'error', title: 'خطا!', text: '{{ session('error') }}', confirmButtonText: 'باشه', confirmButtonColor: '#d33' });
-    </script>
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'خطا!',
+                text: '{{ session('error') }}',
+                confirmButtonText: 'باشه',
+                confirmButtonColor: '#d33'
+            });
+        </script>
     @endif
 
     @if ($errors->any())
-    <script>
-        Swal.fire({ icon: 'error', title: 'خطا در ثبت اطلاعات!', html: '<ul class="text-right" style="direction: rtl;">@foreach ($errors->all() as $error)<li class="mb-1">• {{ $error }}</li>@endforeach</ul>', confirmButtonText: 'اصلاح می‌کنم', confirmButtonColor: '#d33' });
-    </script>
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'خطا در ثبت اطلاعات!',
+                html: '<ul class="text-right" style="direction: rtl;">@foreach ($errors->all() as $error)<li class="mb-1">• {{ $error }}</li>@endforeach</ul>',
+                confirmButtonText: 'اصلاح می‌کنم',
+                confirmButtonColor: '#d33'
+            });
+        </script>
     @endif
 
     <script>
@@ -303,7 +348,9 @@
                 confirmButtonText: 'بله، حذف کن!',
                 cancelButtonText: 'انصراف',
             }).then((result) => {
-                if (result.isConfirmed) { form.submit(); }
+                if (result.isConfirmed) {
+                    form.submit();
+                }
             });
         }
 

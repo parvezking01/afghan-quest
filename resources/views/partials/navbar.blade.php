@@ -5,9 +5,10 @@
             <!-- Logo + Nav Links (Left Side) -->
             <div class="flex items-center gap-8">
                 <a href="{{ url('/') }}" class="flex items-center gap-2 text-2xl font-black flex-shrink-0">
-                    <span class="text-3xl animate-float">🏔️</span>
-                    <span class="gradient-text hidden sm:inline">{{ app()->getLocale() === 'en' ? 'Afghan Quest' : 'افغان کویست' }}</span>
-                </a>
+    <img src="{{ asset('images/logo.png') }}" alt="Afghan Quest Logo" class="h-16 w-auto">
+
+    <span class="gradient-text hidden sm:inline">{{ app()->getLocale() === 'en' ? 'Afghan Quest' : 'افغان کویست' }}</span>
+</a>
 
                 <!-- Desktop Menu (only essential links) -->
                 <div class="hidden lg:flex items-center gap-5">

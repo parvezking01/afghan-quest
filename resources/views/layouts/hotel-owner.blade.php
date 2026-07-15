@@ -44,13 +44,16 @@
             width: 6px;
             height: 6px;
         }
+
         ::-webkit-scrollbar-track {
             background: #f1f5f9;
         }
+
         ::-webkit-scrollbar-thumb {
             background: #cbd5e1;
             border-radius: 3px;
         }
+
         ::-webkit-scrollbar-thumb:hover {
             background: #94a3b8;
         }
@@ -59,9 +62,11 @@
         .dark ::-webkit-scrollbar-track {
             background: #1e293b;
         }
+
         .dark ::-webkit-scrollbar-thumb {
             background: #475569;
         }
+
         .dark ::-webkit-scrollbar-thumb:hover {
             background: #64748b;
         }
@@ -71,6 +76,7 @@
             scrollbar-width: thin;
             scrollbar-color: #cbd5e1 #f1f5f9;
         }
+
         .dark * {
             scrollbar-color: #475569 #1e293b;
         }
@@ -79,36 +85,47 @@
         .dark .bg-white {
             background: #1e293b !important;
         }
+
         .dark .bg-gray-100 {
             background: #0f172a !important;
         }
+
         .dark .bg-gray-50 {
             background: #1a1f2e !important;
         }
+
         .dark .text-gray-900 {
             color: #f1f5f9 !important;
         }
+
         .dark .text-gray-800 {
             color: #e2e8f0 !important;
         }
+
         .dark .text-gray-700 {
             color: #cbd5e1 !important;
         }
+
         .dark .text-gray-600 {
             color: #94a3b8 !important;
         }
+
         .dark .text-gray-500 {
             color: #64748b !important;
         }
+
         .dark .text-gray-400 {
             color: #475569 !important;
         }
+
         .dark .border-gray-100 {
             border-color: #334155 !important;
         }
+
         .dark .border-gray-200 {
             border-color: #334155 !important;
         }
+
         .dark input,
         .dark textarea,
         .dark select {
@@ -116,6 +133,7 @@
             color: #e2e8f0 !important;
             border-color: #475569 !important;
         }
+
         .dark .shadow-sm {
             box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4) !important;
         }
@@ -150,7 +168,8 @@
             <!-- Logo -->
             <div class="p-6 border-b border-gray-700">
                 <a href="{{ url('/') }}" class="flex items-center gap-3 text-xl font-black">
-                    <span class="text-2xl">🏨</span>
+                    <img src="{{ asset('images/logo.png') }}" alt="Afghan Quest Logo" class="h-16 w-auto">
+
                     <span style="color: #F4D03F;">پنل هوتل</span>
                 </a>
                 <p class="text-gray-400 text-sm mt-1 mr-2">مدیریت اقامتگاه</p>
@@ -213,22 +232,29 @@
         <main class="flex-1 mr-72 overflow-y-auto bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
 
             <!-- Header -->
-            <header class="bg-white dark:bg-gray-800 shadow-sm sticky top-0 z-20 border-b border-gray-200 dark:border-gray-700 transition-colors duration-300">
+            <header
+                class="bg-white dark:bg-gray-800 shadow-sm sticky top-0 z-20 border-b border-gray-200 dark:border-gray-700 transition-colors duration-300">
                 <div class="flex items-center justify-between px-8 py-5">
                     <div>
                         <h1 class="text-2xl font-black text-gray-900 dark:text-white">@yield('page_title', 'داشبورد')</h1>
                         <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">@yield('page_subtitle', 'خوش آمدید ' . auth()->user()->name)</p>
                     </div>
                     <div class="flex items-center gap-4">
-                        <button onclick="toggleDarkMode()" class="text-gray-500 dark:text-gray-300 hover:text-yellow-500 transition-colors text-xl p-2" title="حالت شب/روز">
+                        <button onclick="toggleDarkMode()"
+                            class="text-gray-500 dark:text-gray-300 hover:text-yellow-500 transition-colors text-xl p-2"
+                            title="حالت شب/روز">
                             <i id="darkIcon" class="fas fa-moon"></i>
                         </button>
 
                         <span class="text-sm text-gray-400 dark:text-gray-500">
                             @if (auth()->user()->is_approved)
-                                <span class="bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400 px-3 py-1 rounded-lg font-medium">✅ تایید شده</span>
+                                <span
+                                    class="bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400 px-3 py-1 rounded-lg font-medium">✅
+                                    تایید شده</span>
                             @else
-                                <span class="bg-yellow-50 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400 px-3 py-1 rounded-lg font-medium">⏳ در انتظار تایید</span>
+                                <span
+                                    class="bg-yellow-50 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400 px-3 py-1 rounded-lg font-medium">⏳
+                                    در انتظار تایید</span>
                             @endif
                         </span>
                         <a href="{{ url('/') }}"
@@ -247,32 +273,67 @@
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({ duration: 800, once: true });</script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
 
     @if (session('success'))
-    <script>Swal.fire({ icon: 'success', title: 'موفق!', text: '{{ session('success') }}', confirmButtonText: 'باشه', confirmButtonColor: '#1B5E20' });</script>
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'موفق!',
+                text: '{{ session('success') }}',
+                confirmButtonText: 'باشه',
+                confirmButtonColor: '#1B5E20'
+            });
+        </script>
     @endif
     @if (session('error'))
-    <script>Swal.fire({ icon: 'error', title: 'خطا!', text: '{{ session('error') }}', confirmButtonText: 'باشه', confirmButtonColor: '#d33' });</script>
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'خطا!',
+                text: '{{ session('error') }}',
+                confirmButtonText: 'باشه',
+                confirmButtonColor: '#d33'
+            });
+        </script>
     @endif
     @if ($errors->any())
-    <script>Swal.fire({ icon: 'error', title: 'خطا!', html: '<ul>@foreach ($errors->all() as $error)<li>{{ $error }}</li>@endforeach</ul>', confirmButtonText: 'باشه' });</script>
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'خطا!',
+                html: '<ul>@foreach ($errors->all() as $error)<li>{{ $error }}</li>@endforeach</ul>',
+                confirmButtonText: 'باشه'
+            });
+        </script>
     @endif
 
     <script>
-        if (localStorage.getItem('darkMode') === 'true' || (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        if (localStorage.getItem('darkMode') === 'true' || (!localStorage.getItem('darkMode') && window.matchMedia(
+                '(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
         }
+
         function toggleDarkMode() {
             document.documentElement.classList.toggle('dark');
             const isDark = document.documentElement.classList.contains('dark');
             localStorage.setItem('darkMode', isDark);
             const icon = document.getElementById('darkIcon');
-            if (icon) { icon.classList.toggle('fa-moon', !isDark); icon.classList.toggle('fa-sun', isDark); }
+            if (icon) {
+                icon.classList.toggle('fa-moon', !isDark);
+                icon.classList.toggle('fa-sun', isDark);
+            }
         }
         document.addEventListener('DOMContentLoaded', () => {
             const icon = document.getElementById('darkIcon');
-            if (icon && document.documentElement.classList.contains('dark')) { icon.classList.replace('fa-moon', 'fa-sun'); }
+            if (icon && document.documentElement.classList.contains('dark')) {
+                icon.classList.replace('fa-moon', 'fa-sun');
+            }
         });
     </script>
 </body>
