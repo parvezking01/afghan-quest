@@ -148,16 +148,17 @@
                 <!-- Language Switcher + User Menu + Dark Mode Toggle -->
                 <div class="flex items-center gap-3">
                     <!-- Language Switcher -->
-                    <div class="flex items-center gap-1 border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 rounded-full overflow-hidden">
-    <a href="{{ route('language.switch', 'fa') }}"
-        class="px-2 py-1 text-xs font-bold transition-all {{ app()->getLocale() === 'fa' ? 'bg-primary-500 dark:bg-primary-700 text-white' : 'text-gray-800 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700' }}">
-        FA
-    </a>
-    <a href="{{ route('language.switch', 'en') }}"
-        class="px-2 py-1 text-xs font-bold transition-all {{ app()->getLocale() === 'en' ? 'bg-primary-500 dark:bg-primary-700 text-white' : 'text-gray-800 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700' }}">
-        EN
-    </a>
-</div>
+                    <div
+                        class="flex items-center gap-1 border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 rounded-full overflow-hidden">
+                        <a href="{{ route('language.switch', 'fa') }}"
+                            class="px-2 py-1 text-xs font-bold transition-all {{ app()->getLocale() === 'fa' ? 'bg-primary-500 dark:bg-primary-700 text-white' : 'text-gray-800 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700' }}">
+                            FA
+                        </a>
+                        <a href="{{ route('language.switch', 'en') }}"
+                            class="px-2 py-1 text-xs font-bold transition-all {{ app()->getLocale() === 'en' ? 'bg-primary-500 dark:bg-primary-700 text-white' : 'text-gray-800 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700' }}">
+                            EN
+                        </a>
+                    </div>
 
                     <!-- Dark Mode Toggle -->
                     <button onclick="toggleDarkMode()"

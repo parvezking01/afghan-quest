@@ -3,6 +3,8 @@
 use App\Http\Controllers\Admin\DashboardController as AdminDashboard;
 use App\Http\Controllers\Admin\TrendingController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Frontend\BookingController;
 use App\Http\Controllers\Frontend\DestinationController;
 use App\Http\Controllers\Frontend\HomeController;
@@ -10,6 +12,8 @@ use App\Http\Controllers\Frontend\HotelController;
 use App\Http\Controllers\Frontend\PackageController;
 use App\Http\Controllers\Frontend\ProvinceController;
 use App\Http\Controllers\Frontend\ReviewController;
+use App\Http\Controllers\Frontend\SearchController;
+use App\Http\Controllers\Frontend\SitemapController;
 use App\Http\Controllers\HotelOwner\DashboardController as HotelOwnerDashboard;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\ProfileController;
@@ -18,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 
 // Language Switcher
 Route::get('/language/{locale}', [LanguageController::class, 'switch'])->name('language.switch');
-Route::get('/search', [App\Http\Controllers\Frontend\SearchController::class, 'index'])->name('search');
+Route::get('/search', [SearchController::class, 'index'])->name('search');
 
 // Public Routes
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -40,12 +44,12 @@ Route::get('/packages', [PackageController::class, 'index'])->name('packages.ind
 Route::get('/packages/{slug}', [PackageController::class, 'show'])->name('packages.show');
 
 // Forgot Password Routes
-Route::get('/forgot-password', [App\Http\Controllers\Auth\ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
-Route::post('/forgot-password', [App\Http\Controllers\Auth\ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
-Route::get('/reset-password/{token}', [App\Http\Controllers\Auth\ResetPasswordController::class, 'showResetForm'])->name('password.reset');
-Route::post('/reset-password', [App\Http\Controllers\Auth\ResetPasswordController::class, 'reset'])->name('password.update');
+Route::get('/forgot-password', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
+Route::post('/forgot-password', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
+Route::get('/reset-password/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
+Route::post('/reset-password', [ResetPasswordController::class, 'reset'])->name('password.update');
 
-Route::get('/sitemap.xml', [App\Http\Controllers\Frontend\SitemapController::class, 'index'])->name('sitemap');
+Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
 
 // Auth Routes
 require __DIR__.'/auth.php';
@@ -94,19 +98,19 @@ Route::middleware(['auth'])->group(function () {
     // Admin Routes
     Route::middleware(['role:admin'])->prefix('admin')->name('admin.')->group(function () {
         Route::get('/dashboard', [AdminDashboard::class, 'index'])->name('dashboard');
-        Route::resource('provinces', \App\Http\Controllers\Admin\ProvinceController::class);
-        Route::resource('destinations', \App\Http\Controllers\Admin\DestinationController::class);
-        Route::resource('hotels', \App\Http\Controllers\Admin\HotelController::class);
-        Route::patch('/hotels/{hotel}/approve', [\App\Http\Controllers\Admin\HotelController::class, 'approve'])->name('hotels.approve');
-        Route::resource('packages', \App\Http\Controllers\Admin\PackageController::class);
-        Route::get('/bookings', [\App\Http\Controllers\Admin\BookingController::class, 'index'])->name('bookings.index');
-        Route::get('/bookings/{booking}', [\App\Http\Controllers\Admin\BookingController::class, 'show'])->name('bookings.show');
-        Route::patch('/bookings/{booking}/status', [\App\Http\Controllers\Admin\BookingController::class, 'updateStatus'])->name('bookings.status');
+        Route::resource('provinces', App\Http\Controllers\Admin\ProvinceController::class);
+        Route::resource('destinations', App\Http\Controllers\Admin\DestinationController::class);
+        Route::resource('hotels', App\Http\Controllers\Admin\HotelController::class);
+        Route::patch('/hotels/{hotel}/approve', [App\Http\Controllers\Admin\HotelController::class, 'approve'])->name('hotels.approve');
+        Route::resource('packages', App\Http\Controllers\Admin\PackageController::class);
+        Route::get('/bookings', [App\Http\Controllers\Admin\BookingController::class, 'index'])->name('bookings.index');
+        Route::get('/bookings/{booking}', [App\Http\Controllers\Admin\BookingController::class, 'show'])->name('bookings.show');
+        Route::patch('/bookings/{booking}/status', [App\Http\Controllers\Admin\BookingController::class, 'updateStatus'])->name('bookings.status');
         Route::resource('users', UserController::class);
         Route::patch('/users/{user}/approve', [UserController::class, 'approve'])->name('users.approve');
-        Route::get('/reviews', [\App\Http\Controllers\Admin\ReviewController::class, 'index'])->name('reviews.index');
-        Route::patch('/reviews/{review}/approve', [\App\Http\Controllers\Admin\ReviewController::class, 'approve'])->name('reviews.approve');
-        Route::delete('/reviews/{review}', [\App\Http\Controllers\Admin\ReviewController::class, 'destroy'])->name('reviews.destroy');
+        Route::get('/reviews', [App\Http\Controllers\Admin\ReviewController::class, 'index'])->name('reviews.index');
+        Route::patch('/reviews/{review}/approve', [App\Http\Controllers\Admin\ReviewController::class, 'approve'])->name('reviews.approve');
+        Route::delete('/reviews/{review}', [App\Http\Controllers\Admin\ReviewController::class, 'destroy'])->name('reviews.destroy');
         Route::get('/trending', [TrendingController::class, 'index'])->name('trending.index');
         Route::post('/trending/toggle', [TrendingController::class, 'toggle'])->name('trending.toggle');
     });

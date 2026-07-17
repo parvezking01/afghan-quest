@@ -4,32 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>@yield('title', app()->getLocale() === 'en' ? 'Afghan Quest' : 'افغان کویست') | {{ app()->getLocale() === 'en' ? 'Explore Afghanistan' : 'کاوش در افغانستان' }}</title>
+    <title>@yield('title', app()->getLocale() === 'en' ? 'Afghan Quest' : 'افغان کویست') | {{ app()->getLocale() === 'en' ? 'Explore Afghanistan' : 'کاوش در افغانستان' }}</title>
 
-<!-- SEO Meta Tags -->
-<meta name="description" content="@yield('meta_description', app()->getLocale() === 'en' ? 'Afghan Quest - Discover the beauty of Afghanistan. Explore provinces, destinations, hotels, and tour packages.' : 'افغان کویست - کشف زیبایی‌های افغانستان. کاوش در ولایات، مکان ها، هوتل‌ها و پکیج‌های تور.')">
-<meta name="keywords" content="@yield('meta_keywords', 'Afghanistan, tourism, travel, provinces, hotels, tours, افغانستان, گردشگری, سفر, ولایات, هوتل, تور')">
-<meta name="author" content="Afghan Quest">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="{{ url()->current() }}">
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="@yield('meta_description', app()->getLocale() === 'en' ? 'Afghan Quest - Discover the beauty of Afghanistan. Explore provinces, destinations, hotels, and tour packages.' : 'افغان کویست - کشف زیبایی‌های افغانستان. کاوش در ولایات، مکان ها، هوتل‌ها و پکیج‌های تور.')">
+    <meta name="keywords" content="@yield('meta_keywords', 'Afghanistan, tourism, travel, provinces, hotels, tours, افغانستان, گردشگری, سفر, ولایات, هوتل, تور')">
+    <meta name="author" content="Afghan Quest">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{ url()->current() }}">
 
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="{{ url()->current() }}">
-<meta property="og:title" content="@yield('title', app()->getLocale() === 'en' ? 'Afghan Quest' : 'افغان کویست')">
-<meta property="og:description" content="@yield('meta_description', app()->getLocale() === 'en' ? 'Discover the beauty of Afghanistan' : 'کشف زیبایی‌های افغانستان')">
-<meta property="og:image" content="@yield('og_image', asset('images/og-image.jpg'))">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:title" content="@yield('title', app()->getLocale() === 'en' ? 'Afghan Quest' : 'افغان کویست')">
+    <meta property="og:description" content="@yield('meta_description', app()->getLocale() === 'en' ? 'Discover the beauty of Afghanistan' : 'کشف زیبایی‌های افغانستان')">
+    <meta property="og:image" content="@yield('og_image', asset('images/og-image.jpg'))">
 
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="@yield('title', app()->getLocale() === 'en' ? 'Afghan Quest' : 'افغان کویست')">
-<meta name="twitter:description" content="@yield('meta_description', app()->getLocale() === 'en' ? 'Discover the beauty of Afghanistan' : 'کشف زیبایی‌های افغانستان')">
-<meta name="twitter:image" content="@yield('og_image', asset('images/og-image.jpg'))">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="@yield('title', app()->getLocale() === 'en' ? 'Afghan Quest' : 'افغان کویست')">
+    <meta name="twitter:description" content="@yield('meta_description', app()->getLocale() === 'en' ? 'Discover the beauty of Afghanistan' : 'کشف زیبایی‌های افغانستان')">
+    <meta name="twitter:image" content="@yield('og_image', asset('images/og-image.jpg'))">
 
-<!-- Language -->
-<meta name="language" content="{{ app()->getLocale() === 'en' ? 'English' : 'Dari' }}">
-<link rel="alternate" hreflang="fa" href="{{ url()->current() }}?lang=fa">
-<link rel="alternate" hreflang="en" href="{{ url()->current() }}?lang=en">
+    <!-- Language -->
+    <meta name="language" content="{{ app()->getLocale() === 'en' ? 'English' : 'Dari' }}">
+    <link rel="alternate" hreflang="fa" href="{{ url()->current() }}?lang=fa">
+    <link rel="alternate" hreflang="en" href="{{ url()->current() }}?lang=en">
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -94,244 +94,277 @@
         }
     </script>
 
-<style>
-    * {
-        font-family: 'Vazirmatn', Tahoma, sans-serif;
-    }
+    <style>
+        * {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+        }
 
-    /* Smooth transitions for dark mode */
-    body, .bg-white, .bg-gray-50, .bg-gray-100,
-    .text-gray-800, .text-gray-700, .text-gray-600, .text-gray-500, .text-gray-400,
-    .border-gray-100, .border-gray-200, .border-gray-300,
-    input, textarea, select {
-        transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-    }
+        /* Smooth transitions for dark mode */
+        body,
+        .bg-white,
+        .bg-gray-50,
+        .bg-gray-100,
+        .text-gray-800,
+        .text-gray-700,
+        .text-gray-600,
+        .text-gray-500,
+        .text-gray-400,
+        .border-gray-100,
+        .border-gray-200,
+        .border-gray-300,
+        input,
+        textarea,
+        select {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
 
-    /* Dark Mode - Backgrounds */
-    .dark .bg-white {
-        background: #1e293b !important;
-    }
-    .dark .bg-gray-50 {
-        background: #0f172a !important;
-    }
-    .dark .bg-gray-100 {
-        background: #1a1f2e !important;
-    }
+        /* Dark Mode - Backgrounds */
+        .dark .bg-white {
+            background: #1e293b !important;
+        }
 
-    /* Dark Mode - Text Colors (Brighter for visibility) */
-    .dark .text-gray-900 {
-        color: #f8fafc !important;
-    }
-    .dark .text-gray-800 {
-        color: #f1f5f9 !important;
-    }
-    .dark .text-gray-700 {
-        color: #e2e8f0 !important;
-    }
-    .dark .text-gray-600 {
-        color: #cbd5e1 !important;
-    }
-    .dark .text-gray-500 {
-        color: #94a3b8 !important;
-    }
-    .dark .text-gray-400 {
-        color: #64748b !important;
-    }
+        .dark .bg-gray-50 {
+            background: #0f172a !important;
+        }
 
-    /* Dark Mode - Section Titles */
-    .dark h2,
-    .dark h3,
-    .dark h4,
-    .dark h5,
-    .dark .section-title h2,
-    .dark .font-black {
-        color: #f1f5f9 !important;
-    }
-    .dark .section-title p {
-        color: #94a3b8 !important;
-    }
+        .dark .bg-gray-100 {
+            background: #1a1f2e !important;
+        }
 
-    /* Dark Mode - Badges */
-    .dark .bg-primary-50 {
-        background: rgba(27, 94, 32, 0.3) !important;
-        color: #4ade80 !important;
-    }
-    .dark .bg-gold-50 {
-        background: rgba(212, 168, 83, 0.2) !important;
-        color: #fbbf24 !important;
-    }
+        /* Dark Mode - Text Colors (Brighter for visibility) */
+        .dark .text-gray-900 {
+            color: #f8fafc !important;
+        }
 
-    /* Dark Mode - Text Accent Colors */
-    .dark .text-primary-800 {
-        color: #e2e8f0 !important;
-    }
-    .dark .text-primary-500 {
-        color: #4ade80 !important;
-    }
-    .dark .text-gold-500 {
-        color: #f59e0b !important;
-    }
-    .dark .text-gold-400 {
-        color: #fbbf24 !important;
-    }
-    .dark .text-yellow-400 {
-        color: #fbbf24 !important;
-    }
+        .dark .text-gray-800 {
+            color: #f1f5f9 !important;
+        }
 
-    /* Dark Mode - Why Choose Us Cards */
-    .dark .card-3d h5 {
-        color: #f1f5f9 !important;
-    }
-    .dark .card-3d p {
-        color: #94a3b8 !important;
-    }
+        .dark .text-gray-700 {
+            color: #e2e8f0 !important;
+        }
 
-    /* Dark Mode - Borders */
-    .dark .border-gray-100 {
-        border-color: #334155 !important;
-    }
-    .dark .border-gray-200 {
-        border-color: #334155 !important;
-    }
-    .dark .border-gray-300 {
-        border-color: #475569 !important;
-    }
+        .dark .text-gray-600 {
+            color: #cbd5e1 !important;
+        }
 
-    /* Dark Mode - Shadows */
-    .dark .shadow-sm {
-        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4) !important;
-    }
-    .dark .shadow-lg {
-        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5) !important;
-    }
-    .dark .shadow-2xl {
-        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6) !important;
-    }
+        .dark .text-gray-500 {
+            color: #94a3b8 !important;
+        }
 
-    /* Dark Mode - Inputs */
-    .dark input[type="text"],
-    .dark input[type="email"],
-    .dark input[type="password"],
-    .dark input[type="number"],
-    .dark input[type="date"],
-    .dark input[type="time"],
-    .dark textarea,
-    .dark select {
-        background: #1e293b !important;
-        color: #e2e8f0 !important;
-        border-color: #475569 !important;
-    }
-    .dark input::placeholder,
-    .dark textarea::placeholder {
-        color: #64748b !important;
-    }
+        .dark .text-gray-400 {
+            color: #64748b !important;
+        }
 
-    /* Dark Mode - Hover states */
-    .dark .hover\:bg-gray-50:hover {
-        background: #1a1f2e !important;
-    }
-    .dark .hover\:bg-gray-100:hover {
-        background: #1e293b !important;
-    }
+        /* Dark Mode - Section Titles */
+        .dark h2,
+        .dark h3,
+        .dark h4,
+        .dark h5,
+        .dark .section-title h2,
+        .dark .font-black {
+            color: #f1f5f9 !important;
+        }
 
-    /* Dark Mode - Navbar */
-    .dark #navbar {
-        background: rgba(15, 23, 42, 0.9) !important;
-    }
+        .dark .section-title p {
+            color: #94a3b8 !important;
+        }
 
-    /* Dark Mode - Footer */
-    .dark footer {
-        background: #0f172a !important;
-    }
+        /* Dark Mode - Badges */
+        .dark .bg-primary-50 {
+            background: rgba(27, 94, 32, 0.3) !important;
+            color: #4ade80 !important;
+        }
 
-    /* Dark Mode - Mobile Menu */
-    .dark .mobile-menu {
-        background: #1e293b !important;
-    }
+        .dark .bg-gold-50 {
+            background: rgba(212, 168, 83, 0.2) !important;
+            color: #fbbf24 !important;
+        }
 
-    /* Glass Effects */
-    .glass {
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-    }
+        /* Dark Mode - Text Accent Colors */
+        .dark .text-primary-800 {
+            color: #e2e8f0 !important;
+        }
 
-    .glass-white {
-        background: rgba(255, 255, 255, 0.8);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-    }
-    .dark .glass-white {
-        background: rgba(30, 41, 59, 0.9);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-    }
+        .dark .text-primary-500 {
+            color: #4ade80 !important;
+        }
 
-    .glass-dark {
-        background: rgba(26, 26, 46, 0.8);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-    }
+        .dark .text-gold-500 {
+            color: #f59e0b !important;
+        }
 
-    .gradient-text {
-        background: linear-gradient(to left, #1B5E20, #D4A853);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-    }
+        .dark .text-gold-400 {
+            color: #fbbf24 !important;
+        }
 
-    .gradient-hero {
-        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-    }
+        .dark .text-yellow-400 {
+            color: #fbbf24 !important;
+        }
 
-    .gradient-btn {
-        background: linear-gradient(135deg, #1B5E20, #2E7D32);
-        transition: all 0.3s ease;
-    }
+        /* Dark Mode - Why Choose Us Cards */
+        .dark .card-3d h5 {
+            color: #f1f5f9 !important;
+        }
 
-    .gradient-btn:hover {
-        background: linear-gradient(135deg, #2E7D32, #1B5E20);
-        box-shadow: 0 10px 30px rgba(27, 94, 32, 0.3);
-        transform: translateY(-2px);
-    }
+        .dark .card-3d p {
+            color: #94a3b8 !important;
+        }
 
-    .gradient-gold {
-        background: linear-gradient(135deg, #D4A853, #F4D03F);
-        transition: all 0.3s ease;
-    }
+        /* Dark Mode - Borders */
+        .dark .border-gray-100 {
+            border-color: #334155 !important;
+        }
 
-    .gradient-gold:hover {
-        box-shadow: 0 10px 30px rgba(212, 168, 83, 0.3);
-        transform: translateY(-2px);
-    }
+        .dark .border-gray-200 {
+            border-color: #334155 !important;
+        }
 
-    .card-3d {
-        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    }
+        .dark .border-gray-300 {
+            border-color: #475569 !important;
+        }
 
-    .card-3d:hover {
-        transform: translateY(-15px) rotateX(5deg);
-        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
-    }
-    .dark .card-3d:hover {
-        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
-    }
+        /* Dark Mode - Shadows */
+        .dark .shadow-sm {
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4) !important;
+        }
 
-    .hero-pattern {
-        background-image: radial-gradient(circle at 20% 50%, rgba(27, 94, 32, 0.1) 0%, transparent 50%),
-            radial-gradient(circle at 80% 50%, rgba(212, 168, 83, 0.1) 0%, transparent 50%);
-    }
+        .dark .shadow-lg {
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5) !important;
+        }
 
-    .section-divider {
-        width: 100px;
-        height: 4px;
-        background: linear-gradient(to left, #1B5E20, #D4A853);
-        border-radius: 2px;
-        margin: 20px auto;
-    }
-</style>
+        .dark .shadow-2xl {
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6) !important;
+        }
+
+        /* Dark Mode - Inputs */
+        .dark input[type="text"],
+        .dark input[type="email"],
+        .dark input[type="password"],
+        .dark input[type="number"],
+        .dark input[type="date"],
+        .dark input[type="time"],
+        .dark textarea,
+        .dark select {
+            background: #1e293b !important;
+            color: #e2e8f0 !important;
+            border-color: #475569 !important;
+        }
+
+        .dark input::placeholder,
+        .dark textarea::placeholder {
+            color: #64748b !important;
+        }
+
+        /* Dark Mode - Hover states */
+        .dark .hover\:bg-gray-50:hover {
+            background: #1a1f2e !important;
+        }
+
+        .dark .hover\:bg-gray-100:hover {
+            background: #1e293b !important;
+        }
+
+        /* Dark Mode - Navbar */
+        .dark #navbar {
+            background: rgba(15, 23, 42, 0.9) !important;
+        }
+
+        /* Dark Mode - Footer */
+        .dark footer {
+            background: #0f172a !important;
+        }
+
+        /* Dark Mode - Mobile Menu */
+        .dark .mobile-menu {
+            background: #1e293b !important;
+        }
+
+        /* Glass Effects */
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .glass-white {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .dark .glass-white {
+            background: rgba(30, 41, 59, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .glass-dark {
+            background: rgba(26, 26, 46, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gradient-text {
+            background: linear-gradient(to left, #1B5E20, #D4A853);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .gradient-hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+        }
+
+        .gradient-btn {
+            background: linear-gradient(135deg, #1B5E20, #2E7D32);
+            transition: all 0.3s ease;
+        }
+
+        .gradient-btn:hover {
+            background: linear-gradient(135deg, #2E7D32, #1B5E20);
+            box-shadow: 0 10px 30px rgba(27, 94, 32, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .gradient-gold {
+            background: linear-gradient(135deg, #D4A853, #F4D03F);
+            transition: all 0.3s ease;
+        }
+
+        .gradient-gold:hover {
+            box-shadow: 0 10px 30px rgba(212, 168, 83, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .card-3d {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-3d:hover {
+            transform: translateY(-15px) rotateX(5deg);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .dark .card-3d:hover {
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-pattern {
+            background-image: radial-gradient(circle at 20% 50%, rgba(27, 94, 32, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(212, 168, 83, 0.1) 0%, transparent 50%);
+        }
+
+        .section-divider {
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to left, #1B5E20, #D4A853);
+            border-radius: 2px;
+            margin: 20px auto;
+        }
+    </style>
 </head>
 
 <body class="bg-gray-50 dark:bg-gray-900 font-dari transition-colors duration-300">
