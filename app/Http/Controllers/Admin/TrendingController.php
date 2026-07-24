@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Province;
 use App\Models\Destination;
 use App\Models\Hotel;
 use App\Models\Package;
+use App\Models\Province;
 use Illuminate\Http\Request;
 
 class TrendingController extends Controller
@@ -28,16 +28,17 @@ class TrendingController extends Controller
             'id' => 'required|integer',
         ]);
 
-        $model = match($request->type) {
+        $model = match ($request->type) {
             'province' => Province::findOrFail($request->id),
             'destination' => Destination::findOrFail($request->id),
             'hotel' => Hotel::findOrFail($request->id),
             'package' => Package::findOrFail($request->id),
         };
 
-        $model->update(['is_trending' => !$model->is_trending]);
+        $model->update(['is_trending' => ! $model->is_trending]);
 
         $status = $model->is_trending ? '✅ پرطرفدار شد' : '❌ از پرطرفدارها حذف شد';
+
         return back()->with('success', "{$status}.");
     }
 }

@@ -28,15 +28,17 @@ class ReviewController extends Controller
 
     public function approve(Review $review)
     {
-        $review->update(['is_approved' => !$review->is_approved]);
+        $review->update(['is_approved' => ! $review->is_approved]);
 
         $status = $review->is_approved ? 'تایید شد' : 'لغو تایید شد';
+
         return back()->with('success', "✅ نظر {$status}.");
     }
 
     public function destroy(Review $review)
     {
         $review->delete();
+
         return back()->with('success', '✅ نظر با موفقیت حذف شد.');
     }
 }

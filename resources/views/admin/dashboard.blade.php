@@ -114,93 +114,93 @@
                 <span
                     class="text-xs font-medium text-gray-400 dark:text-gray-500 bg-gray-50 dark:bg-gray-700 px-2 py-1 rounded-lg">افغانی</span>
             </div>
-            <p class="text-3xl font-black text-gray-700 dark:text-white">{{ number_format($stats['total_revenue']) }}</p>
+            <p class="text-3xl font-black text-gray-700 dark:text-white">{{ number_format($stats['total_revenue'] ?? 0) }}</p>
             <p class="text-gray-400 dark:text-gray-500 text-sm mt-1">در این ماه:
-                {{ number_format($stats['monthly_revenue']) }}</p>
+                {{ number_format($stats['monthly_revenue'] ?? 0) }}</p>
         </div>
+    </div>
 
-        <!-- Recent Bookings Table -->
-        <div class="bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm mb-8 overflow-hidden"
-            data-aos="fade-up">
-            <div class="p-6 border-b border-gray-100 dark:border-gray-700 flex items-center justify-between">
-                <h4 class="font-bold text-gray-600 dark:text-gray-300 text-lg">📋 آخرین رزروها</h4>
-                <a href="{{ route('admin.bookings.index') }}"
-                    class="text-sm text-blue-500 hover:text-blue-600 font-medium">مشاهده همه ←</a>
-            </div>
-            <div class="overflow-x-auto">
-                <table class="w-full">
-                    <thead>
-                        <tr class="bg-gray-50/50 dark:bg-gray-700/50">
-                            <th
-                                class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider">
-                                شماره رزرو</th>
-                            <th
-                                class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider">
-                                کاربر</th>
-                            <th
-                                class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider">
-                                نوع</th>
-                            <th
-                                class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider">
-                                مبلغ</th>
-                            <th
-                                class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider">
-                                وضعیت</th>
-                            <th
-                                class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider">
-                                تاریخ</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-gray-50 dark:divide-gray-700">
-                        @forelse($stats['recent_bookings'] as $booking)
-                            <tr class="hover:bg-gray-50/50 dark:hover:bg-gray-700/50 transition-colors">
-                                <td class="py-4 px-6">
-                                    <span
-                                        class="text-sm font-mono font-medium text-gray-600 dark:text-gray-300">{{ $booking->booking_number }}</span>
-                                </td>
-                                <td class="py-4 px-6">
-                                    <div class="flex items-center gap-2">
-                                        <div
-                                            class="w-8 h-8 bg-gray-100 dark:bg-gray-600 rounded-full flex items-center justify-center text-xs font-bold text-gray-500 dark:text-gray-300">
-                                            {{ mb_substr($booking->user->name ?? '؟', 0, 1) }}
-                                        </div>
-                                        <span
-                                            class="text-sm text-gray-600 dark:text-gray-300">{{ $booking->user->name ?? '-' }}</span>
+    <!-- Recent Bookings Table - Removed data-aos -->
+    <div class="bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm mb-8 overflow-hidden">
+        <div class="p-6 border-b border-gray-100 dark:border-gray-700 flex items-center justify-between">
+            <h4 class="font-bold text-gray-600 dark:text-gray-300 text-lg">📋 آخرین رزروها</h4>
+            <a href="{{ route('admin.bookings.index') }}"
+                class="text-sm text-blue-500 hover:text-blue-600 font-medium">مشاهده همه ←</a>
+        </div>
+        <div class="overflow-x-auto">
+            <table class="w-full">
+                <thead>
+                    <tr class="bg-gray-50/50 dark:bg-gray-700/50">
+                        <th
+                            class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider">
+                            شماره رزرو</th>
+                        <th
+                            class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider">
+                            کاربر</th>
+                        <th
+                            class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider">
+                            نوع</th>
+                        <th
+                            class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider">
+                            مبلغ</th>
+                        <th
+                            class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider">
+                            وضعیت</th>
+                        <th
+                            class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider">
+                            تاریخ</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-50 dark:divide-gray-700">
+                    @forelse($stats['recent_bookings'] as $booking)
+                        <tr class="hover:bg-gray-50/50 dark:hover:bg-gray-700/50 transition-colors">
+                            <td class="py-4 px-6">
+                                <span
+                                    class="text-sm font-mono font-medium text-gray-600 dark:text-gray-300">{{ $booking->booking_number }}</span>
+                            </td>
+                            <td class="py-4 px-6">
+                                <div class="flex items-center gap-2">
+                                    <div
+                                        class="w-8 h-8 bg-gray-100 dark:bg-gray-600 rounded-full flex items-center justify-center text-xs font-bold text-gray-500 dark:text-gray-300">
+                                        {{ mb_substr($booking->user->name ?? '؟', 0, 1) }}
                                     </div>
-                                </td>
-                                <td class="py-4 px-6">
                                     <span
-                                        class="bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 px-3 py-1 rounded-lg text-xs font-medium">
-                                        {{ $booking->booking_type === 'package' ? '📦 تور' : '🏨 هتل' }}
-                                    </span>
-                                </td>
-                                <td class="py-4 px-6 text-sm font-bold text-gray-600 dark:text-gray-300">
-                                    {{ number_format($booking->total_amount) }} اف
-                                </td>
-                                <td class="py-4 px-6">
-                                    <span
-                                        class="px-3 py-1 rounded-lg text-xs font-bold
+                                        class="text-sm text-gray-600 dark:text-gray-300">{{ $booking->user->name ?? '-' }}</span>
+                                </div>
+                            </td>
+                            <td class="py-4 px-6">
+                                <span
+                                    class="bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 px-3 py-1 rounded-lg text-xs font-medium">
+                                    {{ $booking->booking_type === 'package' ? '📦 تور' : '🏨 هتل' }}
+                                </span>
+                            </td>
+                            <td class="py-4 px-6 text-sm font-bold text-gray-600 dark:text-gray-300">
+                                {{ number_format($booking->total_amount) }} اف
+                            </td>
+                            <td class="py-4 px-6">
+                                <span
+                                    class="px-3 py-1 rounded-lg text-xs font-bold
                             {{ $booking->status === 'confirmed' ? 'bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400' : '' }}
                             {{ $booking->status === 'pending' ? 'bg-amber-50 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400' : '' }}
                             {{ $booking->status === 'cancelled' ? 'bg-red-50 dark:bg-red-900/30 text-red-500 dark:text-red-400' : '' }}">
                                         {{ $booking->status === 'confirmed' ? '✅ تایید شده' : ($booking->status === 'pending' ? '⏳ در انتظار' : '❌ لغو شده') }}
-                                    </span>
-                                </td>
-                                <td class="py-4 px-6 text-sm text-gray-400 dark:text-gray-500">
-                                    {{ $booking->created_at->format('Y-m-d') }}
-                                </td>
-                            </tr>
-                        @empty
-                            <tr>
-                                <td colspan="6" class="text-center py-12">
-                                    <div class="text-4xl mb-3">📭</div>
-                                    <p class="text-gray-400 dark:text-gray-500">هیچ رزروی وجود ندارد</p>
-                                </td>
-                            </tr>
-                        @endforelse
-                    </tbody>
-                </table>
-            </div>
+                                </span>
+                            </td>
+                            <td class="py-4 px-6 text-sm text-gray-400 dark:text-gray-500">
+                                {{ $booking->created_at->format('Y-m-d') }}
+                            </td>
+                        </tr>
+                    @empty
+                        <tr>
+                            <td colspan="6" class="text-center py-12">
+                                <div class="text-4xl mb-3">📭</div>
+                                <p class="text-gray-400 dark:text-gray-500">هیچ رزروی وجود ندارد</p>
+                            </td>
+                        </tr>
+                    @endforelse
+                </tbody>
+            </table>
         </div>
+    </div>
 
-    @endsection
+@endsection

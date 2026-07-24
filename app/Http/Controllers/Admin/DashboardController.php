@@ -9,7 +9,6 @@ use App\Models\Hotel;
 use App\Models\Package;
 use App\Models\Province;
 use App\Models\User;
-use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
@@ -29,10 +28,9 @@ class DashboardController extends Controller
             // ✅ Revenue Calculations (Only calculating 'confirmed' bookings)
             'total_revenue' => Booking::where('status', 'confirmed')->sum('total_amount'),
             'monthly_revenue' => Booking::where('status', 'confirmed')
-                                        ->whereMonth('created_at', now()->month)
-                                        ->whereYear('created_at', now()->year)
-                                        ->sum('total_amount'),
-
+                ->whereMonth('created_at', now()->month)
+                ->whereYear('created_at', now()->year)
+                ->sum('total_amount'),
             'recent_bookings' => Booking::with('user')->latest()->take(5)->get(),
             'recent_users' => User::latest()->take(5)->get(),
         ];

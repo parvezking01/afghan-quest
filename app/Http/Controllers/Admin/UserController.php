@@ -20,10 +20,10 @@ class UserController extends Controller
         // Search by name, email, or phone
         if ($request->has('search') && $request->search !== '') {
             $search = $request->search;
-            $query->where(function($q) use ($search) {
+            $query->where(function ($q) use ($search) {
                 $q->where('name', 'like', "%{$search}%")
-                  ->orWhere('email', 'like', "%{$search}%")
-                  ->orWhere('phone', 'like', "%{$search}%");
+                    ->orWhere('email', 'like', "%{$search}%")
+                    ->orWhere('phone', 'like', "%{$search}%");
             });
         }
 
@@ -39,9 +39,10 @@ class UserController extends Controller
 
     public function approve(User $user)
     {
-        $user->update(['is_approved' => !$user->is_approved]);
+        $user->update(['is_approved' => ! $user->is_approved]);
 
         $status = $user->is_approved ? 'تایید شد' : 'لغو تایید شد';
+
         return back()->with('success', "✅ کاربر {$status}.");
     }
 
@@ -52,6 +53,7 @@ class UserController extends Controller
         }
 
         $user->delete();
+
         return redirect()->route('admin.users.index')
             ->with('success', '✅ کاربر با موفقیت حذف شد.');
     }
