@@ -25,6 +25,14 @@ class DashboardController extends Controller
             'pending_bookings' => Booking::where('status', 'pending')->count(),
             'pending_hotels' => Hotel::where('is_approved', false)->count(),
             'pending_owners' => User::where('role', 'hotel_owner')->where('is_approved', false)->count(),
+
+            // ✅ Revenue Calculations (Only calculating 'confirmed' bookings)
+            'total_revenue' => Booking::where('status', 'confirmed')->sum('total_amount'),
+            'monthly_revenue' => Booking::where('status', 'confirmed')
+                                        ->whereMonth('created_at', now()->month)
+                                        ->whereYear('created_at', now()->year)
+                                        ->sum('total_amount'),
+
             'recent_bookings' => Booking::with('user')->latest()->take(5)->get(),
             'recent_users' => User::latest()->take(5)->get(),
         ];
