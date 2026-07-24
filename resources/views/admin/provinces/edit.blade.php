@@ -6,201 +6,205 @@
 
 @section('content')
 
-    <div class="max-w-3xl mx-auto">
-        <div class="bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm p-8">
-            <form action="{{ route('admin.provinces.update', $province) }}" method="POST" enctype="multipart/form-data">
+    <div class="max-w-4xl mx-auto">
+        <div class="bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm p-8 lg:p-10">
+
+            <!-- UPDATE FORM -->
+            <form action="{{ route('admin.provinces.update', $province) }}" method="POST" enctype="multipart/form-data" id="updateForm">
                 @csrf
                 @method('PUT')
 
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">نام ولایت (دری)
-                            *</label>
-                        <input type="text" name="name" value="{{ old('name', $province->name) }}"
-                            class="w-full px-4 py-3 border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            required>
-                    </div>
+                <!-- SECTION 1: Basic Info & Settings -->
+                <div class="border-b border-gray-100 dark:border-gray-700 pb-8">
+                    <h3 class="text-lg font-black text-gray-800 dark:text-white mb-6">اطلاعات پایه</h3>
 
-                    <div>
-                        <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">English Name <span
-                                class="text-gray-400 text-xs">(اختیاری)</span></label>
-                        <input type="text" name="name_en" value="{{ old('name_en', $province->name_en) }}"
-                            class="w-full px-4 py-3 border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-left"
-                            dir="ltr">
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">سطح امنیت *</label>
-                        <select name="safety_level"
-                            class="w-full px-4 py-3 border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            required>
-                            <option value="safe" {{ $province->safety_level === 'safe' ? 'selected' : '' }}>🟢 امن
-                            </option>
-                            <option value="moderate" {{ $province->safety_level === 'moderate' ? 'selected' : '' }}>🟡 متوسط
-                            </option>
-                            <option value="caution" {{ $province->safety_level === 'caution' ? 'selected' : '' }}>🔴 احتیاط
-                            </option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">ترتیب نمایش</label>
-                        <input type="number" name="display_order"
-                            value="{{ old('display_order', $province->display_order) }}"
-                            class="w-full px-4 py-3 border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    </div>
-                </div>
-
-                <!-- Dari Description -->
-                <div class="mt-6">
-                    <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">توضیحات (دری) *</label>
-                    <textarea name="description" rows="4"
-                        class="w-full px-4 py-3 border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        required>{{ old('description', $province->description) }}</textarea>
-                </div>
-
-                <!-- English Description -->
-                <div class="mt-6">
-                    <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">English Description <span
-                            class="text-gray-400 text-xs">(اختیاری)</span></label>
-                    <textarea name="description_en" rows="4"
-                        class="w-full px-4 py-3 border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-left"
-                        dir="ltr" placeholder="English description...">{{ old('description_en', $province->description_en) }}</textarea>
-                </div>
-
-                <!-- FEATURED IMAGE -->
-                <div class="mt-6">
-                    <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">تصویر شاخص</label>
-                    @if ($province->featured_image)
-                        <div
-                            class="mb-3 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-xl p-3 flex items-center gap-3">
-                            <i class="fas fa-image text-amber-500"></i>
-                            <span class="text-sm text-amber-700 dark:text-amber-400">تصویر فعلی موجود است. می‌توانید تصویر
-                                جدید جایگزین کنید.</span>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- Names -->
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">نام ولایت (دری) *</label>
+                            <input type="text" name="name" value="{{ old('name', $province->name) }}"
+                                class="w-full px-4 py-3 border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+                                required>
                         </div>
-                    @endif
-                    <div class="flex items-start gap-4">
-                        <div
-                            class="w-40 h-40 bg-gray-100 dark:bg-gray-700 rounded-xl flex items-center justify-center overflow-hidden flex-shrink-0 border-2 border-gray-200 dark:border-gray-600">
-                            @if ($province->featured_image)
-                                <img id="featuredPreview" src="{{ asset('storage/' . $province->featured_image) }}"
-                                    class="w-full h-full object-cover">
-                            @else
-                                <img id="featuredPreview" src="#" class="hidden w-full h-full object-cover"
-                                    style="display:none;">
-                                <i id="featuredPlaceholder" class="fas fa-image text-4xl text-gray-400"></i>
-                            @endif
+
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">English Name <span class="text-gray-400 text-xs">(اختیاری)</span></label>
+                            <input type="text" name="name_en" value="{{ old('name_en', $province->name_en) }}"
+                                class="w-full px-4 py-3 border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-left transition-all"
+                                dir="ltr">
                         </div>
-                        <div class="flex-1">
-                            <label for="featured_image"
-                                class="block border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-xl p-4 text-center hover:border-blue-400 cursor-pointer bg-gray-50 dark:bg-gray-700">
-                                <i class="fas fa-cloud-upload-alt text-2xl text-blue-500 mb-2"></i>
-                                <p class="text-sm font-bold text-gray-600 dark:text-gray-300">تصویر جدید (اختیاری)</p>
+
+                        <!-- Order & Status (Perfectly balanced row) -->
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">ترتیب نمایش</label>
+                            <input type="number" name="display_order" value="{{ old('display_order', $province->display_order) }}"
+                                class="w-full px-4 py-3 border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all">
+                        </div>
+
+                        <div class="flex items-center gap-6 pt-2 md:pt-8">
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input type="checkbox" name="is_trending" value="1" {{ $province->is_trending ? 'checked' : '' }}
+                                    class="w-5 h-5 rounded border-gray-300 dark:border-gray-600 text-amber-500 focus:ring-amber-500 transition-all">
+                                <span class="text-sm font-bold text-gray-600 dark:text-gray-300 group-hover:text-amber-500 transition-colors">⭐ پرطرفدار</span>
                             </label>
-                            <input type="file" name="featured_image" id="featured_image" class="hidden" accept="image/*"
-                                onchange="previewImage(this, 'featuredPreview', 'featuredPlaceholder')">
+
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input type="checkbox" name="is_active" value="1" {{ $province->is_active ? 'checked' : '' }}
+                                    class="w-5 h-5 rounded border-gray-300 dark:border-gray-600 text-green-500 focus:ring-green-500 transition-all">
+                                <span class="text-sm font-bold text-gray-600 dark:text-gray-300 group-hover:text-green-500 transition-colors">✅ فعال</span>
+                            </label>
                         </div>
                     </div>
                 </div>
 
-                <!-- GALLERY IMAGES -->
-                <div class="mt-6">
-                    <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">گالری تصاویر</label>
-                    <div
-                        class="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-xl p-4 hover:border-blue-400 cursor-pointer bg-gray-50 dark:bg-gray-700">
-                        <label for="gallery_images" class="cursor-pointer block text-center">
-                            <i class="fas fa-images text-3xl text-blue-500 mb-2"></i>
-                            <p class="text-sm font-bold text-gray-600 dark:text-gray-300">افزودن عکس جدید</p>
-                        </label>
-                        <input type="file" name="gallery_images[]" id="gallery_images" class="hidden" accept="image/*"
-                            multiple onchange="previewGallery()">
+                <!-- SECTION 2: Descriptions -->
+                <div class="border-b border-gray-100 dark:border-gray-700 py-8">
+                    <h3 class="text-lg font-black text-gray-800 dark:text-white mb-6">توضیحات</h3>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">توضیحات (دری) *</label>
+                            <textarea name="description" rows="5"
+                                class="w-full px-4 py-3 border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+                                required>{{ old('description', $province->description) }}</textarea>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">English Description <span class="text-gray-400 text-xs">(اختیاری)</span></label>
+                            <textarea name="description_en" rows="5"
+                                class="w-full px-4 py-3 border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-left transition-all"
+                                dir="ltr" placeholder="English description...">{{ old('description_en', $province->description_en) }}</textarea>
+                        </div>
                     </div>
-                    <div id="galleryPreview" class="grid grid-cols-4 gap-3 mt-3"></div>
+                </div>
+
+                <!-- SECTION 3: Media -->
+                <div class="border-b border-gray-100 dark:border-gray-700 py-8">
+                    <h3 class="text-lg font-black text-gray-800 dark:text-white mb-6">تصاویر و گالری</h3>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- FEATURED IMAGE -->
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">تصویر شاخص</label>
+                            <div class="flex items-start gap-4">
+                                <div class="w-32 h-32 bg-gray-100 dark:bg-gray-700 rounded-xl flex items-center justify-center overflow-hidden flex-shrink-0 border-2 border-gray-200 dark:border-gray-600">
+                                    @if ($province->featured_image)
+                                        <img id="featuredPreview" src="{{ asset('storage/' . $province->featured_image) }}" class="w-full h-full object-cover">
+                                    @else
+                                        <img id="featuredPreview" src="#" class="hidden w-full h-full object-cover">
+                                        <i id="featuredPlaceholder" class="fas fa-image text-3xl text-gray-400"></i>
+                                    @endif
+                                </div>
+                                <div class="flex-1">
+                                    <label for="featured_image" class="block border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-xl p-4 text-center hover:border-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700 transition-all cursor-pointer bg-gray-50 dark:bg-gray-700/50">
+                                        <i class="fas fa-cloud-upload-alt text-xl text-blue-500 mb-2"></i>
+                                        <p class="text-sm font-bold text-gray-600 dark:text-gray-300">تصویر جدید (اختیاری)</p>
+                                        <p class="text-xs text-gray-400 mt-1">JPG, PNG - Max 2MB</p>
+                                    </label>
+                                    <input type="file" name="featured_image" id="featured_image" class="hidden" accept="image/*"
+                                        onchange="previewImage(this, 'featuredPreview', 'featuredPlaceholder')">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- GALLERY IMAGES -->
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">گالری تصاویر</label>
+                            <div class="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-xl p-4 hover:border-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700 transition-all cursor-pointer bg-gray-50 dark:bg-gray-700/50">
+                                <label for="gallery_images" class="cursor-pointer block text-center w-full h-full">
+                                    <i class="fas fa-images text-2xl text-blue-500 mb-2"></i>
+                                    <p class="text-sm font-bold text-gray-600 dark:text-gray-300">افزودن عکس جدید</p>
+                                </label>
+                                <input type="file" name="gallery_images[]" id="gallery_images" class="hidden" accept="image/*"
+                                    multiple onchange="previewGallery()">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gallery Preview Container -->
+                    <div id="galleryPreview" class="grid grid-cols-4 md:grid-cols-6 gap-3 mt-4"></div>
+
+                    <!-- Existing Gallery Images -->
                     @if ($province->gallery_images && count(json_decode($province->gallery_images)) > 0)
-                        <div class="mt-3">
-                            <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">تصاویر فعلی گالری:</p>
-                            <div class="grid grid-cols-4 gap-3">
+                        <div class="mt-6 pt-4 border-t border-gray-100 dark:border-gray-700/50">
+                            <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">تصاویر فعلی گالری:</p>
+                            <div class="grid grid-cols-4 md:grid-cols-6 gap-3">
                                 @foreach (json_decode($province->gallery_images) as $image)
-                                    <img src="{{ asset('storage/' . $image) }}"
-                                        class="w-full h-24 object-cover rounded-lg">
+                                    <div class="relative group rounded-lg overflow-hidden border border-gray-200 dark:border-gray-600">
+                                        <img src="{{ asset('storage/' . $image) }}" class="w-full h-24 object-cover">
+                                    </div>
                                 @endforeach
                             </div>
                         </div>
                     @endif
                 </div>
 
-                <!-- History & Culture -->
-                <div class="grid md:grid-cols-2 gap-6 mt-6">
-                    <div>
-                        <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">تاریخچه</label>
-                        <textarea name="history" rows="3"
-                            class="w-full px-4 py-3 border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500">{{ old('history', $province->history) }}</textarea>
+                <!-- SECTION 4: Additional Details -->
+                <div class="py-8">
+                    <h3 class="text-lg font-black text-gray-800 dark:text-white mb-6">جزئیات تکمیلی</h3>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">تاریخچه</label>
+                            <textarea name="history" rows="3"
+                                class="w-full px-4 py-3 border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all">{{ old('history', $province->history) }}</textarea>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">فرهنگ و رسوم</label>
+                            <textarea name="culture" rows="3"
+                                class="w-full px-4 py-3 border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all">{{ old('culture', $province->culture) }}</textarea>
+                        </div>
                     </div>
-                    <div>
-                        <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">فرهنگ و رسوم</label>
-                        <textarea name="culture" rows="3"
-                            class="w-full px-4 py-3 border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500">{{ old('culture', $province->culture) }}</textarea>
+
+                    <div class="grid md:grid-cols-3 gap-6 mt-6">
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">بهترین زمان بازدید</label>
+                            <input type="text" name="best_time_to_visit" value="{{ old('best_time_to_visit', $province->best_time_to_visit) }}"
+                                class="w-full px-4 py-3 border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">غذاهای محلی</label>
+                            <input type="text" name="local_food" value="{{ old('local_food', $province->local_food) }}"
+                                class="w-full px-4 py-3 border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">حمل و نقل</label>
+                            <input type="text" name="transportation_info" value="{{ old('transportation_info', $province->transportation_info) }}"
+                                class="w-full px-4 py-3 border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all">
+                        </div>
                     </div>
                 </div>
+            </form>
 
-                <!-- Best Time & Local Food -->
-                <div class="grid md:grid-cols-2 gap-6 mt-6">
-                    <div>
-                        <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">بهترین زمان
-                            بازدید</label>
-                        <input type="text" name="best_time_to_visit"
-                            value="{{ old('best_time_to_visit', $province->best_time_to_visit) }}"
-                            class="w-full px-4 py-3 border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">غذاهای محلی</label>
-                        <input type="text" name="local_food" value="{{ old('local_food', $province->local_food) }}"
-                            class="w-full px-4 py-3 border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    </div>
-                </div>
+            <!-- ACTIONS BOTTOM BAR -->
+            <div class="flex flex-col-reverse md:flex-row items-center justify-between gap-4 mt-4 pt-6 border-t border-gray-100 dark:border-gray-700">
 
-                <!-- Transportation -->
-                <div class="mt-6">
-                    <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">حمل و نقل</label>
-                    <textarea name="transportation_info" rows="2"
-                        class="w-full px-4 py-3 border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500">{{ old('transportation_info', $province->transportation_info) }}</textarea>
-                </div>
+                <!-- DELETE FORM (Left aligned) -->
+                <form action="{{ route('admin.provinces.destroy', $province) }}" method="POST" onsubmit="return confirm('آیا از حذف این ولایت مطمئن هستید؟')">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 px-4 py-3 rounded-xl font-bold text-sm transition-all flex items-center gap-2">
+                        <i class="fas fa-trash"></i> حذف این ولایت
+                    </button>
+                </form>
 
-                <!-- Checkboxes -->
-                <div class="flex gap-6 mt-6 bg-gray-50 dark:bg-gray-700/50 rounded-xl p-4">
-                    <label class="flex items-center gap-3 cursor-pointer">
-                        <input type="checkbox" name="is_trending" value="1"
-                            {{ $province->is_trending ? 'checked' : '' }}
-                            class="w-5 h-5 rounded border-gray-300 dark:border-gray-600 text-amber-500">
-                        <span class="text-sm font-bold text-gray-700 dark:text-gray-300">⭐ پرطرفدار</span>
-                    </label>
-                    <label class="flex items-center gap-3 cursor-pointer">
-                        <input type="checkbox" name="is_active" value="1"
-                            {{ $province->is_active ? 'checked' : '' }}
-                            class="w-5 h-5 rounded border-gray-300 dark:border-gray-600 text-green-500">
-                        <span class="text-sm font-bold text-gray-700 dark:text-gray-300">✅ فعال</span>
-                    </label>
-                </div>
-
-                <div class="flex gap-3 mt-8">
-                    <button type="submit"
-                        class="bg-blue-500 text-white px-8 py-3 rounded-xl font-bold hover:bg-blue-600 transition-colors">
+                <!-- SAVE & CANCEL (Right aligned) -->
+                <div class="flex items-center gap-3 w-full md:w-auto justify-end">
+                    <a href="{{ route('admin.provinces.index') }}"
+                        class="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 px-6 py-3 rounded-xl font-bold hover:bg-gray-200 dark:hover:bg-gray-600 transition-all">
+                        <i class="fas fa-times ms-1"></i> انصراف
+                    </a>
+                    <button type="submit" form="updateForm"
+                        class="bg-blue-500 text-white px-8 py-3 rounded-xl font-bold hover:bg-blue-600 shadow-lg shadow-blue-500/30 transition-all">
                         <i class="fas fa-save ms-1"></i> بروزرسانی
                     </button>
-                    <a href="{{ route('admin.provinces.index') }}"
-                        class="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 px-8 py-3 rounded-xl font-bold hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">انصراف</a>
                 </div>
-            </form>
 
-            <form action="{{ route('admin.provinces.destroy', $province) }}" method="POST"
-                class="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700"
-                onsubmit="return confirm('آیا از حذف این ولایت مطمئن هستید؟')">
-                @csrf
-                @method('DELETE')
-                <button type="submit" class="text-red-500 hover:text-red-700 font-bold text-sm">
-                    <i class="fas fa-trash ms-1"></i> حذف این ولایت
-                </button>
-            </form>
+            </div>
+
         </div>
     </div>
 
@@ -225,7 +229,12 @@
                 const reader = new FileReader();
                 reader.onload = function(e) {
                     const div = document.createElement('div');
-                    div.innerHTML = `<img src="${e.target.result}" class="w-full h-24 object-cover rounded-lg">`;
+                    div.className = 'relative group rounded-lg overflow-hidden border border-gray-200 dark:border-gray-600';
+                    div.innerHTML =
+                        `<img src="${e.target.result}" class="w-full h-24 object-cover">
+                         <div class="absolute inset-0 bg-black/40 hidden group-hover:flex items-center justify-center transition-all">
+                             <span class="text-white text-xs font-bold">جدید</span>
+                         </div>`;
                     container.appendChild(div);
                 };
                 reader.readAsDataURL(files[i]);

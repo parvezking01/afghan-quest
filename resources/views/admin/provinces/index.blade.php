@@ -33,8 +33,6 @@
                             مکان‌ها</th>
                         <th class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase">
                             هوتل‌ها</th>
-                        <th class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase">امنیت
-                        </th>
                         <th class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase">
                             پرطرفدار</th>
                         <th class="text-right py-4 px-6 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase">وضعیت
@@ -76,21 +74,6 @@
                                 </span>
                             </td>
                             <td class="py-4 px-6">
-                                <span
-                                    class="px-3 py-1 rounded-lg text-xs font-bold
-                            {{ $province->safety_level === 'safe' ? 'bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400' : '' }}
-                            {{ $province->safety_level === 'moderate' ? 'bg-yellow-50 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400' : '' }}
-                            {{ $province->safety_level === 'caution' ? 'bg-red-50 dark:bg-red-900/30 text-red-600 dark:text-red-400' : '' }}">
-                                    @if ($province->safety_level === 'safe')
-                                        🟢 امن
-                                    @elseif($province->safety_level === 'moderate')
-                                        🟡 متوسط
-                                    @else
-                                        🔴 احتیاط
-                                    @endif
-                                </span>
-                            </td>
-                            <td class="py-4 px-6">
                                 @if ($province->is_trending)
                                     <span
                                         class="bg-amber-50 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 px-3 py-1 rounded-lg text-xs font-bold">⭐
@@ -128,7 +111,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="9" class="text-center py-12">
+                            <td colspan="8" class="text-center py-12">
                                 <div class="text-5xl mb-4">🗺️</div>
                                 <h3 class="text-lg font-bold text-gray-600 dark:text-gray-300 mb-2">هیچ ولایتی وجود ندارد
                                 </h3>

@@ -15,7 +15,7 @@ class Province extends Model
         'name_en',
         'slug',
         'description',
-        'description_en',  // ✅ added
+        'description_en',
         'featured_image',
         'gallery_images',
         'history',
@@ -23,7 +23,6 @@ class Province extends Model
         'best_time_to_visit',
         'local_food',
         'transportation_info',
-        'safety_level',
         'is_trending',
         'is_active',
         'display_order'

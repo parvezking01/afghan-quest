@@ -37,7 +37,6 @@ class ProvinceController extends Controller
             'best_time_to_visit' => 'nullable|string',
             'local_food' => 'nullable|string',
             'transportation_info' => 'nullable|string',
-            'safety_level' => 'required|in:safe,moderate,caution',
             'is_trending' => 'boolean',
             'is_active' => 'boolean',
             'display_order' => 'integer',
@@ -47,7 +46,6 @@ class ProvinceController extends Controller
             'featured_image.max' => 'حجم تصویر نباید بیشتر از ۲ مگابایت باشد.',
             'name.required' => 'نام ولایت الزامی است.',
             'description.required' => 'توضیحات ولایت الزامی است.',
-            'safety_level.required' => 'سطح امنیت را انتخاب کنید.',
         ]);
 
         $featuredPath = $request->file('featured_image')->store('provinces', 'public');
@@ -72,7 +70,6 @@ class ProvinceController extends Controller
             'best_time_to_visit' => $request->best_time_to_visit,
             'local_food' => $request->local_food,
             'transportation_info' => $request->transportation_info,
-            'safety_level' => $request->safety_level,
             'is_trending' => $request->has('is_trending'),
             'is_active' => $request->has('is_active'),
             'display_order' => $request->display_order ?? 0,
@@ -101,7 +98,6 @@ class ProvinceController extends Controller
             'best_time_to_visit' => 'nullable|string',
             'local_food' => 'nullable|string',
             'transportation_info' => 'nullable|string',
-            'safety_level' => 'required|in:safe,moderate,caution',
             'is_trending' => 'boolean',
             'is_active' => 'boolean',
             'display_order' => 'integer',
@@ -110,7 +106,6 @@ class ProvinceController extends Controller
             'featured_image.max' => 'حجم تصویر نباید بیشتر از ۲ مگابایت باشد.',
             'name.required' => 'نام ولایت الزامی است.',
             'description.required' => 'توضیحات ولایت الزامی است.',
-            'safety_level.required' => 'سطح امنیت را انتخاب کنید.',
         ]);
 
         if ($request->hasFile('featured_image')) {
@@ -142,7 +137,6 @@ class ProvinceController extends Controller
             'best_time_to_visit' => $request->best_time_to_visit,
             'local_food' => $request->local_food,
             'transportation_info' => $request->transportation_info,
-            'safety_level' => $request->safety_level,
             'is_trending' => $request->has('is_trending'),
             'is_active' => $request->has('is_active'),
             'display_order' => $request->display_order ?? 0,

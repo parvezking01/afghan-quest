@@ -13,15 +13,6 @@
     <section class="relative py-24"
         style="background: linear-gradient(rgba(26, 26, 46, 0.8), rgba(22, 33, 62, 0.85)), url('{{ $province->featured_image ? asset('storage/' . $province->featured_image) : 'https://images.unsplash.com/photo-1599070292747-ae92ea606fcf?w=1920' }}') center/cover;">
         <div class="container mx-auto px-4 text-center relative z-10">
-            <span class="bg-gold-500 text-primary-900 px-4 py-2 rounded-full text-sm font-bold inline-block mb-4">
-                @if ($province->safety_level === 'safe')
-                    {{ app()->getLocale() === 'en' ? '🟢 Safe' : '🟢 امن' }}
-                @elseif($province->safety_level === 'moderate')
-                    {{ app()->getLocale() === 'en' ? '🟡 Moderate' : '🟡 متوسط' }}
-                @else
-                    {{ app()->getLocale() === 'en' ? '🔴 Caution' : '🔴 احتیاط' }}
-                @endif
-            </span>
             <h1 class="text-4xl lg:text-6xl font-black text-white mb-4">{{ locale_field($province, 'name') }}</h1>
             <p class="text-xl text-gray-300 max-w-2xl mx-auto">{{ locale_field($province, 'description') }}</p>
         </div>
